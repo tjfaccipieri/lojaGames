@@ -8,10 +8,14 @@ import { OrderModule } from "ngx-order-pipe";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { InicioComponent } from './inicio/inicio.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InicioComponent,
+    CadastroComponent
   ],
 
   imports: [
