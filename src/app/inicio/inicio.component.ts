@@ -24,7 +24,7 @@ export class InicioComponent implements OnInit {
   listaProdutos: Produto[];
 
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private prod: ProdutoService,
     private catg: CategoriaService,
     private router: Router

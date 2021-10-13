@@ -1,3 +1,4 @@
+import { ProdutosComponent } from './produtos/produtos.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch:'full'},
   {path: 'inicio', component: InicioComponent},
   {path: 'cadastro', component: CadastroComponent},
+  {path: 'produtos', component: ProdutosComponent},
 ];
 
 @NgModule({

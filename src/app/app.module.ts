@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { InicioComponent } from './inicio/inicio.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { ProdutosComponent } from './produtos/produtos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    CadastroComponent
+    CadastroComponent,
+    ProdutosComponent
   ],
 
   imports: [

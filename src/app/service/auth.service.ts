@@ -62,4 +62,20 @@ export class AuthService {
       `https://lojagamesbackend.herokuapp.com/usuarios/delete/${id}`
     );
   }
+
+  logado(){
+    let ok: boolean = false
+    if (environment.token != ''){
+      ok = true;
+    }
+    return ok;
+  }
+
+  admin(){
+    let ok: boolean = false;
+    if (environment.tipo == 'admin'){
+      ok = true;
+    }
+    return ok;
+  }
 }
