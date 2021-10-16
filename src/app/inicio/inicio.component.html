@@ -1,65 +1,52 @@
-<!-- <div class="container-fluid">
+<div class="container-fluid fundo pt-4">
   <div class="container">
     <div class="row">
-      <div class="col-10 d-flex justify-content-between">
+      <div class="col-10">
         <h1>Loja de Games da Tia Gen.</h1>
+        </div>
+        <div class="col-2 d-flex align-items-center">
         <button
         *ngIf='!auth.logado()'
-          type="button"
-          class="btn btn-outline-info"
-          routerLink='/cadastro'
+          type="submit"
+          class="botao logar"
+          routerLink='/login'
         >
-          Logar/Cadastrar
+          Logar <i class="fa fa-sign-in" aria-hidden="true"></i>
         </button>
-        <button *ngIf='auth.logado()' class='btn btn-outline-danger'>Sair</button>
+        <button *ngIf='auth.logado()' (click)='sair()' class='botao sair'>Sair <i class="fa fa-sign-out" aria-hidden="true"></i></button>
       </div>
     </div>
-  </div>
-</div> -->
 
-<div class="container-fluid">
-  <video id="videoBG" poster="poster.JPG" autoplay muted loop>
-    <source src="/src/assets/bolha.mp4" type="video/mp4" />
-  </video>
-  <div class="col-md-6" id="img-bg"></div>
-  <div class="col-md-6">
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-6" id="ft-color">
-        <div class="color">
-          <h1 class="text-center mb-3">Entrar</h1>
-        </div>
-        <div class="form-group">
-          <label for="usuario">E-mail</label>
-          <input
-            class="form-control"
-            type="text"
-            name="usuario"
-            id="usuario"
-            placeholder="Seu Usuário"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="usuario">Senha</label>
-          <input
-            class="form-control"
-            type="password"
-            name="senha"
-            id="senha"
-            placeholder="Sua Senha"
-          />
-        </div>
-
-        <div class="d-flex justify-content-center">
-          <button type="submit" class="btn border-secondary" >
-            Entrar
+    <div class="container p-0">
+      <nav class="navbar navbar-expand-lg navbar-light bgCinza sticky-top">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <a class="nav-link active" aria-current="page" href="#">Playstation</a>
+              </li>
+              <li class="nav-item">
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <a class="nav-link active" aria-current="page" href="#">Playstation</a>
+              </li>
+              <li class="nav-item">
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <a class="nav-link active" aria-current="page" href="#">Playstation</a>
+              </li>
+              <li class="nav-item">
+                <div>
+                  <i class="fa fa-gamepad" aria-hidden="true"></i>
+                  <a class="nav-link active" aria-current="page" href="#">Playstation</a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <hr class="mt-5 mb-5" />
-        <p class="text-center">
-          Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se</a>
-        </p>
-      </div>
+      </nav>
     </div>
   </div>
 </div>

@@ -61,5 +61,9 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  
+  sair(){
+    environment.token = ''
+    environment.usuario = ''
+    environment.nome = ''
+  }
 }

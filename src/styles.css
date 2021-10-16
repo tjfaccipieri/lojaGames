@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+.fundo{
+  background-color: #c4c4c4;
+  min-height: 100vh;
+}
+
+.bgCinza {
+  background-color: #c4c4c4;
+}

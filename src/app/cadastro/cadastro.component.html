@@ -1,104 +1,64 @@
-<div class="container-fluid">
+<div class="container-fluid fundo">
   <div class="container">
-    <div class="row d-flex justify-content-center">
-      <!-- ! inicio do login -->
-      <div class="col-6 d-flex justify-content-center">
-        <div class="col-6 d-flex flex-column align-items-center justify-content-center">
-          <div class="form-group">
-            <label for="usuario">Usuário</label>
-            <input
-              class="form-control"
-              type="text"
-              name="usuario"
-              id="usuario"
-              placeholder="Seu usuário"
-              [(ngModel)]="usuarioLogin.usuario"
-            />
-          </div>
-          <div class="form-group">
-            <label for="usuario">Senha</label>
-            <input
-              class="form-control"
-              type="text"
-              name="usuario"
-              id="usuario"
-              placeholder="Seu usuário"
-              [(ngModel)]="usuarioLogin.senha"
-            />
-          </div>
-          <button
-            type="submit"
-            (click)="logar()"
-            class="btn btn-info w-50 mt-4"
-          >
-            Logar
-          </button>
-        </div>
-      </div>
-      <!-- ! fim do login -->
-
-
-
-
+    <div class="row d-flex justify-content-around align-items-center vh-100">
       <!-- ? inicio do cadastro -->
       <div class="col-6">
+        <div class="col-10  borderRadius">
         <div class="form-group">
-          <label for="usuario">Usuário</label>
           <input
-            class="form-control"
+            class="inputForm"
             type="text"
             name="usuario"
             id="usuario"
-            placeholder="Seu usuário"
+            placeholder="Nome de usuário"
             [(ngModel)]="usuario.usuario"
           />
         </div>
         <div class="form-group">
-          <label for="usuario">Nome</label>
           <input
-            class="form-control"
+            class="inputForm"
             type="text"
             name="usuario"
             id="usuario"
-            placeholder="Seu nome"
+            placeholder="Nome Completo"
             [(ngModel)]="usuario.nome"
           />
         </div>
         <div class="form-group">
-          <label for="usuario">senha</label>
           <input
-            class="form-control"
+            class="inputForm"
             type="text"
             name="usuario"
             id="usuario"
-            placeholder="Seu usuário"
+            placeholder="Senha"
             [(ngModel)]="usuario.senha"
           />
         </div>
         <div class="form-group">
-          <label for="usuario">tipo</label>
           <input
-            class="form-control"
+            class="inputForm"
             type="text"
             name="usuario"
             id="usuario"
-            placeholder="Seu usuário"
+            placeholder="Tipo de usuário"
             [(ngModel)]="usuario.tipo"
           />
         </div>
         <div class="form-group">
-          <label for="usuario">data nascimento</label>
           <input
-            class="form-control"
+            class="inputForm"
             type="date"
             name="usuario"
             id="usuario"
-            placeholder="Seu usuário"
             [(ngModel)]="usuario.dataNascimento"
           />
         </div>
-        <button class="btn btn-dark" (click)="cadastrar()">Cadastrar</button>
+        <div class="d-flex justify-content-center mt-4">
+          <button class="btn btn-outline-danger w-50" routerLink="/inicio">Cancelar</button>
+          <button class="btn btn-outline-dark w-50 ms-4" (click)="cadastrar()">Cadastrar</button>
+        </div>
       </div>
+    </div>
       <!-- ? fim do cadastro -->
     </div>
   </div>

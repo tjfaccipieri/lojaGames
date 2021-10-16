@@ -26,18 +26,7 @@ export class CadastroComponent implements OnInit {
     });
   }
 
-  logar(){
-
-    this.auth.logar(this.usuarioLogin).subscribe((resp: UsuarioLogin)=>{
-      this.usuarioLogin = resp
-      environment.nome = this.usuarioLogin.nome
-      environment.usuario = this.usuarioLogin.usuario
-      environment.token = this.usuarioLogin.token
-      console.log("🚀 ~ file: cadastro.component.ts ~ line 36 ~ CadastroComponent ~ this.auth.logar ~ environment", environment)      
-      alert('logou')
-      this.router.navigate(['/inicio'])
-    })
-  }
+  
 
   
 }
