@@ -12,6 +12,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     InicioComponent,
     CadastroComponent,
     ProdutosComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent
   ],
 
   imports: [
