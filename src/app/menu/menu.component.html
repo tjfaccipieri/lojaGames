@@ -1,0 +1,52 @@
+<div class="container-fluid fundo pt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <h1>Loja de Games da Tia Gen.</h1>
+        </div>
+        <div class="col-2 d-flex align-items-center">
+        <button
+        *ngIf='!auth.logado()'
+          type="submit"
+          class="botao logar"
+          routerLink='/login'
+        >
+          Logar <i class="fa fa-sign-in" aria-hidden="true"></i>
+        </button>
+        <button *ngIf='auth.logado()' (click)='sair()' class='botao sair'>Sair <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+    <div class="container p-0">
+      <nav class="navbar navbar-expand-lg navbar-light bgCinza sticky-top">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <a class="nav-link active" aria-current="page" href="#">Playstation</a>
+              </li>
+              <li class="nav-item">
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <a class="nav-link active" aria-current="page" href="#">Playstation</a>
+              </li>
+              <li class="nav-item">
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <a class="nav-link active" aria-current="page" href="#">Playstation</a>
+              </li>
+              <li class="nav-item">
+                <div>
+                  <i class="fa fa-gamepad" aria-hidden="true"></i>
+                  <a class="nav-link active" aria-current="page" href="#">Playstation</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
