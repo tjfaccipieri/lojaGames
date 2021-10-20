@@ -1,36 +1,8 @@
-.botao {
-  background: none;
-  margin: 0.5em;
-  border: 0;
-  border-radius: 1rem;
-  padding: .5rem 1rem;
-  transition: 0.25s;
-  color: #000
-}
-
-
-.logar {
-  box-shadow: 0.1em 0.1em 0 0 #03024d, inset 0.1em 0.1em 0 0 #03024d;
-}
-.logar:hover,
-.logar:focus {
-  box-shadow: 0 0 0 0 #03024d, inset 6em 3.5em 0 0 #03024d;
-  color: #fff
-}
-.sair {
-  box-shadow: 0.1em 0.1em 0 0 #610a0a, inset 0.1em 0.1em 0 0 #610a0a;
-}
-.sair:hover,
-.sair:focus {
-  box-shadow: 0 0 0 0 #610a0a, inset 6em 3.5em 0 0 #610a0a;
-  color: #fff
-}
-
 li {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid #fff;
+  border-right: 1px solid #131515;
   padding: 0 1rem;
 }
 

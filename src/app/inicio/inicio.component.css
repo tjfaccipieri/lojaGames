@@ -8,24 +8,4 @@
   color: #000
 }
 
-li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-right: 1px solid #fff;
-  padding: 0 1rem;
-}
 
-li:last-child{
-  border: 0;
-}
-
-li .fa{
-  font-size: 1.250rem
-}
-
-li div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
