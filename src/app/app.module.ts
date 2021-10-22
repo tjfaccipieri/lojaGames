@@ -15,6 +15,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MenuComponent } from './menu/menu.component';
     CadastroComponent,
     ProdutosComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    CadprodutosComponent
   ],
 
   imports: [
