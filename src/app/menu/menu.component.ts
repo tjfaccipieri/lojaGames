@@ -48,4 +48,22 @@ export class MenuComponent implements OnInit {
     });
   }
 
+  logar(){
+    this.auth.logar(this.usuarioLogin).subscribe((resp: UsuarioLogin)=>{
+      this.usuarioLogin = resp
+      environment.nome = this.usuarioLogin.nome
+      environment.usuario = this.usuarioLogin.usuario
+      environment.token = this.usuarioLogin.token
+      console.log("🚀 ~ file: inicio.component.ts ~ line 58 ~ InicioComponent ~ this.auth.logar ~ environment", environment)
+
+      alert('logou')
+    })
+  }
+
+  sair(){
+    environment.token = ''
+    environment.usuario = ''
+    environment.nome = ''
+  }
+
 }

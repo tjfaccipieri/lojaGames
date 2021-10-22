@@ -1,5 +1,3 @@
-import { environment } from './../../environments/environment.prod';
-import { UsuarioLogin } from './../model/UsuarioLogin';
 import { Produto } from '../model/Produto';
 import { Categoria } from './../model/Categoria';
 import { CategoriaService } from './../service/categoria.service';
@@ -7,7 +5,7 @@ import { ProdutoService } from './../service/produto.service';
 import { AuthService } from './../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario } from '../model/Usuario';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-inicio',
@@ -15,11 +13,6 @@ import { Usuario } from '../model/Usuario';
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
-
-  usuarioLogin: UsuarioLogin = new UsuarioLogin()
-  
-
-
   listaCategorias: Categoria[];
   listaProdutos: Produto[];
 
@@ -49,21 +42,74 @@ export class InicioComponent implements OnInit {
     });
   }
 
-  logar(){
-    this.auth.logar(this.usuarioLogin).subscribe((resp: UsuarioLogin)=>{
-      this.usuarioLogin = resp
-      environment.nome = this.usuarioLogin.nome
-      environment.usuario = this.usuarioLogin.usuario
-      environment.token = this.usuarioLogin.token
-      console.log("🚀 ~ file: inicio.component.ts ~ line 58 ~ InicioComponent ~ this.auth.logar ~ environment", environment)
+  dynamicSlides = [
+    {
+      id: 1,
+      src: 'https://via.placeholder.com/600/92c952',
+      alt: 'Side 1',
+      title: 'Side 1',
+      name: 'Promoção',
+      value: '14.99',
+    },
+    {
+      id: 2,
+      src: 'https://via.placeholder.com/600/771796',
+      alt: 'Side 2',
+      title: 'Side 2',
+      name: 'Promoção',
+      value: '14.99',
+    },
+    {
+      id: 3,
+      src: 'https://via.placeholder.com/600/24f355',
+      alt: 'Side 3',
+      title: 'Side 3',
+      name: 'Promoção',
+      value: '14.99',
+    },
+    {
+      id: 4,
+      src: 'https://via.placeholder.com/600/d32776',
+      alt: 'Side 4',
+      title: 'Side 4',
+      name: 'Promoção',
+      value: '14.99',
+    },
+    {
+      id: 5,
+      src: 'https://via.placeholder.com/600/f66b97',
+      alt: 'Side 5',
+      title: 'Side 5',
+      name: 'Promoção',
+      value: '14.99',
+    },
+  ];
 
-      alert('logou')
-    })
-  }
-
-  sair(){
-    environment.token = ''
-    environment.usuario = ''
-    environment.nome = ''
-  }
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 600,
+    navText: [
+      '<i class="fa fa-angle-left" aria-hidden="true" ></i>',
+      '<i class="fa fa-angle-right" aria-hidden="true" ></i>',
+    ],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      760: {
+        items: 3,
+      },
+      1000: {
+        items: 4,
+      },
+    },
+    nav: true,
+  };
 }

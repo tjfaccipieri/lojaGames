@@ -1,33 +1,13 @@
-<div class="container-fluid fundo">
-  <div class="container">
-    <div class="row fundo py-4">
-      <div class="col-4"></div>
-      <div class="col d-flex justify-content-center align-items-center">
-        <img
-          src="assets/img/logoGenGames.png"
-          alt=""
-          class=""
-          width="250"
-          height="130"
-        />
-      </div>
-      <div class="col-4 d-flex align-items-center">
-        <button
-          *ngIf="!auth.logado()"
-          type="submit"
-          class="botao logar text-white"
-          routerLink="/login"
-        >
-          Logar <i class="fa fa-sign-in" aria-hidden="true"></i>
-        </button>
-        <button
-          *ngIf="auth.logado()"
-          (click)="sair()"
-          class="botao sair text-white"
-        >
-          Sair <i class="fa fa-sign-out" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+<div class="container">
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let item of dynamicSlides">
+      <ng-template carouselSlide [id]="item.id">
+        <div class="bordinha slidecontainer">
+          <img [src]="item.src" alt="item.alt" class="p-1" />
+          <h2>{{ item.name }} {{ item.id }}</h2>
+          {{ item.value | currency: "BRL" }}
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
 </div>
