@@ -1,12 +1,16 @@
 .bordinha {
   border: 1px solid black;
-  margin-left: 20px;
+  margin: 0 10px;
   border-radius: 15px;
   padding: 10px;
 }
 
 .slidecontainer{
-  max-height: 350px;
-  overflow: hidden;
+  max-height: 400px;
+  /* overflow: hidden; */
+}
+
+.fa-cart-plus {
+  color: #8637a4
 }
 
