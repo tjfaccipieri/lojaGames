@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +9,8 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
+import localept from '@angular/common/locales/pt';
 import { InicioComponent } from './inicio/inicio.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ProdutosComponent } from './produtos/produtos.component';
@@ -17,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
 
+
+registerLocaleData(localept, 'pt');
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,8 +43,9 @@ import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
   ],
 
   providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
+    provide: LOCALE_ID,
+    useClass: HashLocationStrategy,
+    useValue: 'pt'
   }],
   bootstrap: [AppComponent],
 })

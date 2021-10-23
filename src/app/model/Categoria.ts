@@ -5,4 +5,5 @@ export class Categoria {
   public numeroProdutos: number;
   public produto: Produto[];
   public tipo: string;
+  public foto: string;
 }
