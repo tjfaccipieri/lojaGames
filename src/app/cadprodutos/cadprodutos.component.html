@@ -5,12 +5,14 @@
     <div class="col-6">
       <form action="" class="d-flex flex-column">
         <div class="form-group">
-          <label for="nome">Nome:</label>
+          <label for="nome">Plataforma:</label>
           <input
             type="text"
             class="form-control"
+            name="nome"
             id="nome"
             placeholder="Nome da categoria"
+            [(ngModel)]="categoria.tipo"
           />
         </div>
         <div class="form-group mb-2">
@@ -19,10 +21,12 @@
             type="text"
             class="form-control"
             id="foto"
+            name="foto"
             placeholder="Foto da categoria (url)"
+            [(ngModel)]="categoria.foto"
           />
         </div>
-        <button type="submit" class="btn btn-primary align-self-center">
+        <button type="submit" class="btn btn-primary align-self-center" (click)='cadCategoria()'>
           Cadastrar
         </button>
       </form>
@@ -31,6 +35,53 @@
   <!-- * cadastro de categorias -->
 
   <!-- ? cadastro de produtos -->
-  
+  <div class="row d-flex justify-content-center">
+    <h2 class="text-center">Cadastro de produtos:</h2>
+    <div class="col-6">
+      <form action="" class="d-flex flex-column">
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            placeholder="Nome do produto"
+          />
+        </div>
+        <div class="form-group mb-2">
+          <label for="foto">Foto:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="foto"
+            placeholder="Foto do produto (url)"
+          />
+        </div>
+        <div class="form-group mb-2">
+          <label for="categoria">Categoria:</label>
+          <select class="form-control" id="categoria">
+            <option>Selecione uma categoria</option>
+            <option>Categoria 1</option>
+            <option>Categoria 2</option>
+          </select>
+        </div>
+
+        <div class="form-group mb-2">
+          <label for="preco">Preço:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="preco"
+            placeholder="Preço do produto"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary align-self-center">
+          Cadastrar
+
+        </button>
+      </form>
+    </div>
+  </div>
+
   <!-- ? cadastro de produtos -->
 </div>

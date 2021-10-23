@@ -1,14 +1,36 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row w-100">
     <owl-carousel-o [options]="customOptions">
       <ng-container *ngFor="let item of dynamicSlides">
         <ng-template carouselSlide [id]="item.id">
           <div class="bordinha slidecontainer">
-            <img [src]="item.src" alt="item.alt" class="p-1" />
-            <h2 class="text-center">{{ item.name }} {{ item.id }}</h2>
+            <div class='imagemPromo'>
+              <img [src]="listaCategorias[0].foto" alt="item.alt" class="p-1" />
+            </div>
+            <h2 class="text-center">{{ listaCategorias[0].tipo }} {{ item.id }}</h2>
             <div class="d-flex justify-content-between align-items-center mx-3">
               <span class="fw-bold fs-4">{{ item.value | currency: "BRL" }}</span>
               <i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row w-100">
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let item of listaCategorias">
+        <ng-template carouselSlide [id]="item.id">
+          <div class="bordinha slidecontainer">
+            <div class='imagemPromo'>
+              <img [src]="item.foto" alt="item.alt" class="p-1 imagem"/>
+            </div>
+            <h2 class="text-center">{{ item.tipo }}</h2>
+            <div class="d-flex  mx-3">
+              <!-- <span class="fw-bold fs-4">{{ item.value | currency: "BRL" }}</span> -->
+              <i class="fa fa-cart-plus fa-2x ms-auto" aria-hidden="true"></i>
             </div>
           </div>
         </ng-template>

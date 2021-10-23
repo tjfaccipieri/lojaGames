@@ -27,6 +27,7 @@
         >
           Sair <i class="fa fa-sign-out" aria-hidden="true"></i>
         </button>
+        <a routerLink='/cadprodutos'>Cadastrar</a>
       </div>
     </div>
   </div>
@@ -51,31 +52,9 @@
         id="navbarSupportedContent"
       >
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item navHover">
-            <i class="fa fa-gamepad" aria-hidden="true"></i>
-            <a href="#" aria-current="page" class="nav-link">PC</a>
-          </li>
-          <li class="nav-item navHover">
-            <i class="fa fa-gamepad" aria-hidden="true"></i>
-            <a class="nav-link" aria-current="page" href="#">Playstation 4</a>
-          </li>
-          <li class="nav-item navHover">
-            <i class="fa fa-gamepad" aria-hidden="true"></i>
-            <a class="nav-link" aria-current="page" href="#">Playstation 5</a>
-          </li>
-          <li class="nav-item navHover">
-            <i class="fa fa-gamepad" aria-hidden="true"></i>
-            <a class="nav-link" aria-current="page" href="#">X-Box One</a>
-          </li>
-          <li class="nav-item navHover">
-            <i class="fa fa-gamepad" aria-hidden="true"></i>
-            <a class="nav-link" aria-current="page" href="#"
-              >X-Box Series S/X</a
-            >
-          </li>
-          <li class="nav-item navHover">
-            <i class="fa fa-gamepad" aria-hidden="true"></i>
-            <a class="nav-link" aria-current="page" href="#">Nintendo Switch</a>
+          <li class="nav-item navHover w-auto fs-4 fw-bold" *ngFor='let cat of listaCategorias'>
+            <img src="{{cat.foto}}" alt="" width='25' height="auto">
+            <a class="nav-link" aria-current="page" href="#">{{cat.tipo}}</a>
           </li>
         </ul>
       </div>

@@ -14,3 +14,13 @@
   color: #8637a4
 }
 
+.imagemPromo{
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem {
+  max-width: 250px;
+}
