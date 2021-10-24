@@ -5,10 +5,12 @@
       <div class="col d-flex justify-content-center align-items-center">
         <img
           src="assets/img/logoGenGames.png"
-          alt=""
-          class=""
+          alt="Generation Games"
+          class="logo"
           width="250"
           height="130"
+          routerLink="/inicio"
+          
         />
       </div>
       <div class="col-4 d-flex align-items-center">
@@ -52,7 +54,7 @@
         id="navbarSupportedContent"
       >
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item navHover w-auto fs-4 fw-bold" *ngFor='let cat of listaCategorias'>
+          <li class="nav-item navHover w-auto fs-5 fw-bold" *ngFor='let cat of listaCategorias'>
             <img src="{{cat.foto}}" alt="" width='25' height="auto">
             <a class="nav-link" aria-current="page" href="#">{{cat.tipo}}</a>
           </li>

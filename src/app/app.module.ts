@@ -17,6 +17,7 @@ import { ProdutosComponent } from './produtos/produtos.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
+import { ListaprodutosComponent } from './listaprodutos/listaprodutos.component';
 
 
 registerLocaleData(localept, 'pt');
@@ -28,7 +29,8 @@ registerLocaleData(localept, 'pt');
     ProdutosComponent,
     LoginComponent,
     MenuComponent,
-    CadprodutosComponent
+    CadprodutosComponent,
+    ListaprodutosComponent
   ],
 
   imports: [

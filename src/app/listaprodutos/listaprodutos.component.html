@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Lista de produtos cadastrados</h1>
+  <table class="table table-striped table-bordered text-center table-secondary">
+    <thead>
+      <tr class='table-dark'>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Plataforma</th>
+        <th>Preço</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of listaProdutos">
+        <td>{{ produto.id }}</td>
+        <td>{{ produto.nome }}</td>
+        <td class='text-nowrap overflow-hidden' style='max-width: 250px'>{{ produto.descricao }}</td>
+        <td>{{ produto.categoria.tipo }}</td>
+        <td>{{ produto.preco }}</td>
+        <td class="d-flex justify-content-around">
+          <button class="btn btn-outline-primary">
+            Editar
+          </button>
+          <button class="btn btn-outline-danger">
+            Remover
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
