@@ -26,7 +26,11 @@
             [(ngModel)]="categoria.foto"
           />
         </div>
-        <button type="submit" class="btn btn-primary align-self-center" (click)='cadCategoria()'>
+        <button
+          type="submit"
+          class="btn btn-outline-primary align-self-center"
+          (click)="cadCategoria()"
+        >
           Cadastrar
         </button>
       </form>
@@ -63,15 +67,29 @@
         </div>
         <div class="form-group mb-2">
           <label for="categoria">Plataforma:</label>
-          <select class="form-control" id="categoria" name="categoria" [(ngModel)]="idCategoria" (change)='getCatById()'>
-            <option *ngFor="let categoria of listaCategorias" [value]="categoria.id">
+          <select
+            class="form-control"
+            id="categoria"
+            name="categoria"
+            [(ngModel)]="idCategoria"
+            (change)="getCatById()"
+          >
+            <option
+              *ngFor="let categoria of listaCategorias"
+              [value]="categoria.id"
+            >
               {{ categoria.tipo }}
             </option>
           </select>
         </div>
         <div class="form-group mb-2">
           <label for="descricao">Tipo:</label>
-          <select name="tipo" id="tipo" class="form-control" [(ngModel)]="produto.tipo">
+          <select
+            name="tipo"
+            id="tipo"
+            class="form-control"
+            [(ngModel)]="produto.tipo"
+          >
             <option value="jogo">Jogo</option>
             <option value="periferico">Periférico</option>
           </select>
@@ -109,10 +127,18 @@
             [(ngModel)]="produto.quantidade"
           />
         </div>
-        <button type="submit" class="btn btn-primary align-self-center mb-5" (click)="cadProduto()">
+        <div class="d-flex justify-content-center mb-5">
+          <button
+          type="submit"
+          class="btn btn-outline-primary me-4"
+          (click)="cadProduto()"
+        >
           Cadastrar
         </button>
-        <button class="btn btn-dark" routerLink='/listaProdutos'>Ver produtos</button>
+        <button class="btn btn-dark" routerLink="/listaProdutos">
+          Ver produtos
+        </button>
+        </div>
       </form>
     </div>
   </div>

@@ -7,7 +7,7 @@
 
 .slidecontainer{
   max-height: 400px;
-  /* overflow: hidden; */
+  max-width: 25vw;
 }
 
 .fa-cart-plus {
