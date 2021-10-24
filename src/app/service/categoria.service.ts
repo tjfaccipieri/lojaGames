@@ -21,13 +21,13 @@ export class CategoriaService {
 
   getAllCategorias(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(
-      'https://lojagamesbackend.herokuapp.com/categorias'
+      'https://lojagamesbackend.herokuapp.com/categorias', this.token
     );
   }
 
   getCategoriaById(id: number): Observable<Categoria> {
     return this.http.get<Categoria>(
-      `https://lojagamesbackend.herokuapp.com/categorias/${id}`
+      `https://lojagamesbackend.herokuapp.com/categorias/${id}`, this.token
     );
   }
 

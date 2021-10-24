@@ -22,19 +22,19 @@ export class ProdutoService {
 
   getAllProdutos(): Observable<Produto[]> {
     return this.http.get<Produto[]>(
-      'https://lojagamesbackend.herokuapp.com/produtos/all'
+      'https://lojagamesbackend.herokuapp.com/produtos/all', this.token
     );
   }
 
   getProdutoById(id: number): Observable<Produto> {
     return this.http.get<Produto>(
-      `https://lojagamesbackend.herokuapp.com/produtos/${id}`
+      `https://lojagamesbackend.herokuapp.com/produtos/${id}`, this.token
     );
   }
 
   getProdutoByName(nome: string): Observable<Produto> {
     return this.http.get<Produto>(
-      `https://lojagamesbackend.herokuapp.com/produtos/nome/${nome}`
+      `https://lojagamesbackend.herokuapp.com/produtos/nome/${nome}`, this.token
     );
   }
 

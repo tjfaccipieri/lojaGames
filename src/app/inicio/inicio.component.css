@@ -24,3 +24,9 @@
 .imagem {
   max-width: 250px;
 }
+
+.plataforma {
+  max-width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}

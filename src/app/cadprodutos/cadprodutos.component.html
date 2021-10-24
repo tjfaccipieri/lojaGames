@@ -45,7 +45,9 @@
             type="text"
             class="form-control"
             id="nome"
+            name="nome"
             placeholder="Nome do produto"
+            [(ngModel)]="produto.nome"
           />
         </div>
         <div class="form-group mb-2">
@@ -54,30 +56,61 @@
             type="text"
             class="form-control"
             id="foto"
+            name="foto"
             placeholder="Foto do produto (url)"
+            [(ngModel)]="produto.foto"
           />
         </div>
         <div class="form-group mb-2">
-          <label for="categoria">Categoria:</label>
-          <select class="form-control" id="categoria">
-            <option>Selecione uma categoria</option>
-            <option>Categoria 1</option>
-            <option>Categoria 2</option>
+          <label for="categoria">Plataforma:</label>
+          <select class="form-control" id="categoria" name="categoria" [(ngModel)]="idCategoria" (change)='getCatById()'>
+            <option *ngFor="let categoria of listaCategorias" [value]="categoria.id">
+              {{ categoria.tipo }}
+            </option>
           </select>
         </div>
-
+        <div class="form-group mb-2">
+          <label for="descricao">Tipo:</label>
+          <select name="tipo" id="tipo" class="form-control" [(ngModel)]="produto.tipo">
+            <option value="jogo">Jogo</option>
+            <option value="periferico">Periférico</option>
+          </select>
+        </div>
         <div class="form-group mb-2">
           <label for="preco">Preço:</label>
           <input
-            type="text"
+            type="number"
             class="form-control"
             id="preco"
+            name="preco"
             placeholder="Preço do produto"
+            [(ngModel)]="produto.preco"
           />
         </div>
-        <button type="submit" class="btn btn-primary align-self-center">
+        <div class="form-group mb-2">
+          <label for="descricao">Descrição:</label>
+          <textarea
+            class="form-control"
+            id="descricao"
+            name="descricao"
+            rows="3"
+            placeholder="Descrição do produto"
+            [(ngModel)]="produto.descricao"
+          ></textarea>
+        </div>
+        <div class="form-group mb-2">
+          <label for="quantidade">Quantidade:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="quantidade"
+            name="quantidade"
+            placeholder="Quantidade do produto"
+            [(ngModel)]="produto.quantidade"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary align-self-center mb-5" (click)="cadProduto()">
           Cadastrar
-
         </button>
       </form>
     </div>
