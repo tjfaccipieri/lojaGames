@@ -30,7 +30,7 @@ a:last-child {
   border-radius: 1.5rem;
   background-color: #ffffffd0;
   width: 100%;
-  border: none;
+  border: 1px solid #000;
   box-shadow: 5px 8px 6px #03024faa;
   padding: 2rem;
 }

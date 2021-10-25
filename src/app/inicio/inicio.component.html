@@ -4,14 +4,24 @@
       <ng-container *ngFor="let item of listaProdutos">
         <ng-template carouselSlide [lerigou]="item.id">
           <div class="bordinha slidecontainer">
-            <div class='imagemPromo'>
-              <img [src]="item.foto" alt="item.alt" class="p-1 imagem"/>
+            <div class="imagemPromo">
+              <a [routerLink]="['/detalhesProduto', item.id]"
+                ><img [src]="item.foto" alt="item.alt" class="p-1 imagem"
+              /></a>
             </div>
             <h2 class="text-center">{{ item.nome }}</h2>
-            <div class="d-flex align-items-center mx-3">
-              <img [src]="item.categoria.foto" alt="Plataforma" class="plataforma">
-              <span class="fw-bold fs-4">{{ item.preco | currency: "BRL" }}</span>
-              <i class="fa fa-cart-plus fa-2x ms-auto" aria-hidden="true"></i>
+            <div class="d-flex align-items-center justify-content-between mx-3">
+              <img
+                [src]="item.categoria.foto"
+                alt="Plataforma"
+                class="plataforma"
+              />
+              <span class="fw-bold fs-4">{{
+                item.preco | currency: "BRL"
+              }}</span>
+              <a [routerLink]="['/detalhesProduto', item.id]" class="verMais">
+                Ver Mais
+              </a>
             </div>
           </div>
         </ng-template>

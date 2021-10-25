@@ -1,5 +1,5 @@
 .bordinha {
-  border: 1px solid black;
+  border: 1px solid #000;
   margin: 0 10px;
   border-radius: 15px;
   padding: 10px;
@@ -11,7 +11,7 @@
 }
 
 .fa-cart-plus {
-  color: #8637a4
+  color: #8637a4;
 }
 
 .imagemPromo{
@@ -29,4 +29,15 @@
   max-width: 25px;
   height: 25px;
   margin-right: 10px;
+}
+
+.verMais {
+  text-decoration: none;
+  color: #8637a4;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.verMais:hover {
+  text-decoration: underline;
 }

@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row d-flex justify-content-between ">
+      <div class="col-5">
+        <img [src]="produto.foto" alt="" class="img-fluid">
+      </div>
+      <div class="col">
+        <div class="row">
+          <h2>{{produto.nome}}</h2>
+        </div>
+        <div class="row">
+          <p class="w-75">{{produto.descricao}}</p>
+          <p class="fw-bold">Plataforma: {{produto.categoria.tipo}}</p>
+          <hr>
+          <h1>Valor: {{produto.preco | currency: 'BRL'}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

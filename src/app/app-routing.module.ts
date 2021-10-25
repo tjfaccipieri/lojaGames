@@ -1,3 +1,4 @@
+import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
 import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
 import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './produtos/produtos.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadprodutos', component: CadprodutosComponent},
   {path: 'listaProdutos', component: ListaprodutosComponent},
+  {path: 'detalhesProduto/:id', component: DetalhesProdutoComponent},
 ];
 
 @NgModule({

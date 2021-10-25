@@ -54,9 +54,7 @@ export class MenuComponent implements OnInit {
       environment.nome = this.usuarioLogin.nome
       environment.usuario = this.usuarioLogin.usuario
       environment.token = this.usuarioLogin.token
-      console.log("🚀 ~ file: inicio.component.ts ~ line 58 ~ InicioComponent ~ this.auth.logar ~ environment", environment)
-
-      alert('logou')
+      this.router.navigate(['/inicio'])
     })
   }
 
@@ -64,6 +62,9 @@ export class MenuComponent implements OnInit {
     environment.token = ''
     environment.usuario = ''
     environment.nome = ''
+    environment.id = 0
+    environment.tipo = ''
+    this.router.navigate(['/inicio'])
   }
 
 }
