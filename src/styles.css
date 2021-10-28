@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-
+:root{
+  --purple: #8637a4;
+  --black: #131515;
+  --red: #810c09;
+  --blue: #2274a5;
+  --white: #dff3e4;
+}
 .fundo{
-  background-color: #131515;
+  background-color: var(--black);
 }
 

@@ -1,35 +1,33 @@
 <div class="container-fluid fundo">
   <div class="container">
-    <div class="row fundo py-4">
-      <div class="col-4"></div>
-      <div class="col d-flex justify-content-center align-items-center">
+    <div class="row fundo barra">
+      <div class="col-3 d-flex  align-items-center">
         <img
           src="assets/img/logoGenGames.png"
           alt="Generation Games"
           class="logo"
-          width="250"
-          height="130"
+          width="154"
+          height="86"
           routerLink="/inicio"
           
         />
       </div>
-      <div class="col-4 d-flex align-items-center">
+      <div class="col-5 d-flex align-items-center">
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-2 d-flex align-items-center justify-content-center">
         <button
           *ngIf="!auth.logado()"
           type="submit"
-          class="botao logar text-white"
+          class="btn text-white"
           routerLink="/login"
         >
-          Logar <i class="fa fa-sign-in" aria-hidden="true"></i>
+          Faça <a href="" class="link">login</a> <br> ou <a href="" class="link">cadastre-se</a>
         </button>
-        <button
-          *ngIf="auth.logado()"
-          (click)="sair()"
-          class="botao sair text-white"
-        >
-          Sair <i class="fa fa-sign-out" aria-hidden="true"></i>
-        </button>
-        <a routerLink='/cadprodutos'>Cadastrar</a>
+      </div>
+      <div class="col-2 d-flex align-items-center link fs-2 justify-content-evenly">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
       </div>
     </div>
   </div>
@@ -54,7 +52,7 @@
         id="navbarSupportedContent"
       >
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item navHover w-auto fs-5 fw-bold" *ngFor='let cat of listaCategorias'>
+          <li class="nav-item navHover w-auto fs-6 fw-bold" *ngFor='let cat of listaCategorias'>
             <a class="nav-link" aria-current="page" href="#">
             <img src="{{cat.foto}}" alt="" width='25' height="auto">
             {{cat.tipo}}</a>

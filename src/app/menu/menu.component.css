@@ -1,23 +1,9 @@
-.botao {
-  background: none;
-  margin: 0.5em;
-  border: 0;
-  border-radius: 1rem;
-  padding: .5rem 1rem;
-  transition: 0.25s;
-  color: #000
-}
-
 li {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
   z-index: 1;
-}
-
-li:last-child{
-  border: 0;
 }
 
 li .fa{
@@ -30,29 +16,19 @@ li div {
   align-items: center;
 }
 
-.navHover{
-  position: relative;
-}
-
-.navHover::after{
-  position: absolute;
-  content: '';
-  background-color: #2274A590;
-  bottom:0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  z-index: -1;
-  transform: scaleX(0);
-  transform-origin: top;
-  transition: .3s ease-in;
-}
-
-.navHover:hover::after{
-  transform: scaleX(1);
-  transform-origin: bottom;
-}
-
 .logo {
   cursor: pointer;
+}
+
+.barra {
+  height: 125px;
+}
+
+.link {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+.link:hover{
+  text-decoration: underline;
 }
