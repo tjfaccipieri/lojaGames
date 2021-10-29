@@ -1,5 +1,15 @@
-.botao{
-  background-color: var(--destaque);
+.botao {
+  background-color: var(--purple);
   color: #fff;
   font-weight: 700;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.botao .fa {
+  margin-right: 10px;
+}
+
+.botao:hover {
+  background-color: var(--purple-hover);
 }

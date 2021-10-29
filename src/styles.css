@@ -5,6 +5,8 @@
   --red: #810c09;
   --blue: #2274a5;
   --white: #dff3e4;
+  --blue-menu: #2e9ddd;
+  --purple-hover: #441b53;
 }
 .fundo{
   background-color: var(--black);

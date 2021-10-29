@@ -9,7 +9,7 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
+import { HashLocationStrategy, registerLocaleData } from '@angular/common';
 import localept from '@angular/common/locales/pt';
 import { InicioComponent } from './inicio/inicio.component';
 import { CadastroComponent } from './cadastro/cadastro.component';

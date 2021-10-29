@@ -25,10 +25,37 @@ li div {
 }
 
 .link {
-  color: var(--purple);
+  color: var(--white);
   text-decoration: none;
 }
 
 .link:hover{
   text-decoration: underline;
+  color: var(--blue);
+}
+
+.icons {
+  color: var(--white);
+  cursor: pointer;
+}
+
+.icons:hover{
+  color: var(--blue);
+}
+
+.pesquisaButton {
+  background-color: var(--purple);
+  border-radius: 5px;
+  padding:0.750rem 2rem;
+  color: var(--white);
+  margin-left: -60px;
+}
+
+.menu2 {
+  background-color: var(--blue-menu);
+  
+}
+
+.menu2 a{
+  color: var(--black)
 }
