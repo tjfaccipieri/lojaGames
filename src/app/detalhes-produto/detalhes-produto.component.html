@@ -1,26 +1,34 @@
 <div class="container-fluid">
   <div class="container">
-    <div class="row d-flex justify-content-between ">
-      <h1 class="mb-3">{{produto.nome}}</h1>
-      <div class="col-5">
-        <img [src]="produto.foto" alt="" class="img-fluid">
+    <div class="row d-flex justify-content-between">
+      <h1 class="mb-5 ps-5 ms-5">{{produto.nome}}</h1>
+      <div class="col-5 d-flex justify-content-center">
+        <div class="col-8">
+          <img [src]="produto.foto" alt="" class="img-fluid">
+        </div>
       </div>
       <div class="col">
         <div class="row">
         </div>
         <div class="row">
-          <p class="w-100">{{produto.descricao}}</p>
           <span class="fw-bold">Plataforma: {{produto.categoria.tipo}}</span>
-          <small class="text-secondary">Quantidade em estoque: {{produto.quantidade}}</small>
-          <hr>
           <div class="d-flex align-items-center justify-content-between">
-            <h2 class="p-0 m-0">Valor: {{produto.preco | currency: 'BRL'}}</h2>
+            
+            <div>
+              <p class="p-0 m-0 preco"> {{produto.preco | currency: 'BRL'}}</p>
+              <small>Em até 12x de {{prodParcela}}</small>
             <p>Valor no PIX: {{prodDesconto | currency: "BRL"}}</p>
+            </div>
             <button class="botao btn w-25" (click)='addProduto()'><i class="fa fa-shopping-cart" aria-hidden="true"></i>
             Comprar</button>
           </div>
         </div>
       </div>
     </div>
+
+    <p class="w-100">{{produto.descricao}}</p>
+          
+          <small class="text-secondary">Quantidade em estoque: {{produto.quantidade}}</small>
+          <hr>
   </div>
 </div>

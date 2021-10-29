@@ -51,6 +51,10 @@ li div {
   margin-left: -60px;
 }
 
+.pesquisaButton:hover {
+  background-color: var(--purple-hover)
+}
+
 .menu2 {
   background-color: var(--blue-menu);
   

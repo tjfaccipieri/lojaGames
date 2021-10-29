@@ -17,6 +17,7 @@ export class DetalhesProdutoComponent implements OnInit {
   listaCat: Categoria[] 
 
   prodDesconto = 0
+  prodParcela: string
 
   constructor(
     private prod: ProdutoService,
@@ -41,6 +42,7 @@ export class DetalhesProdutoComponent implements OnInit {
     this.prod.getProdutoById(this.idProd).subscribe((resp: Produto) =>{
       this.produto = resp
       this.desconto();
+      this.parcela();
     })
   }
 
@@ -51,5 +53,9 @@ export class DetalhesProdutoComponent implements OnInit {
 
   desconto(){
     this.prodDesconto = this.produto.preco - (this.produto.preco * 0.15)
+  }
+
+  parcela(){
+    this.prodParcela = (this.produto.preco / 12).toLocaleString('pt-BR', {maximumFractionDigits: 2, style: 'currency', currency: 'BRL'})
   }
 }

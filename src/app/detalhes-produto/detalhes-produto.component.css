@@ -13,3 +13,9 @@
 .botao:hover {
   background-color: var(--purple-hover);
 }
+
+.preco {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 2.5rem
+}
