@@ -1,12 +1,35 @@
 <div class="container-fluid rodape">
   <div class="container">
     <div class="row">
-      <div class="col-2">
+      <!-- ? coluna das plataformas -->
+      <div class="col-md-2 d-flex justify-content-center">
         <ul class="list-unstyled">
+          <li><h5 class="">Plataformas:</h5></li>
           <li *ngFor="let cat of listaCategorias">
-            {{cat.tipo}}
+            <small>{{cat.tipo}}</small>
           </li>
         </ul>
+      </div>
+      <!-- ? coluna das plataformas -->
+
+      <!-- * coluna institucional -->
+      <div class="col-md-2 d-flex justify-content-center">
+        <ul class="list-unstyled">
+          <li><h5>Institucional:</h5></li>
+          <li><small>Sobre</small></li>
+          <li><small>Contato</small></li>
+          <li><small>Parceiros</small></li>
+          <li><small>Equipe</small></li>
+          <li><small>Ajuda</small></li>
+        </ul>
+      </div>
+      <!-- * coluna institucional -->
+
+
+    </div>
+    <div class="row d-flex flex-column align-items-center">
+      <div class="col-md-10 d-flex justify-content-center">
+        <small class="">A Generation Games é um projeto institucional para fins estudantis, nenhum dos produtos listados neste site estão realmente a venda ou em estoque.</small>
       </div>
     </div>
   </div>
