@@ -18,11 +18,16 @@
         <span class="fa fa-search pesquisaButton"></span>
       </div>
       <!-- !barra de pesquisa -->
-      <div class="col-2 d-flex align-items-center justify-content-center">
+      <div class="col-2 d-flex align-items-center justify-content-center" *ngIf='!auth.logado()'>
         <small class="text-white text-center">
           Faça <a routerLink='/login' class="link">login</a> <br> ou <a routerLink='/cadastro' class="link">cadastre-se</a>
         </small>
-        <small *ngIf='auth.logado()'> <a routerLink='/cadprodutos'>Cadastrar itens</a> </small>
+      </div>
+      <div class="col-2 d-flex flex-column align-items-center justify-content-center" *ngIf='auth.logado()'>
+        <small class="text-white text-center">
+          Olá {{ nome }} 
+        </small>
+        <small> <a routerLink='/cadprodutos'>Cadastrar itens</a> </small>
       </div>
       <div class="col-2 d-flex align-items-center fs-4 justify-content-evenly">
         <i class="fa fa-shopping-cart icons" aria-hidden="true"></i>

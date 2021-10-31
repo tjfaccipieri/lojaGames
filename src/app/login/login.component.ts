@@ -1,3 +1,4 @@
+import { MenuComponent } from './../menu/menu.component';
 import { Usuario } from './../model/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -27,9 +28,10 @@ export class LoginComponent implements OnInit {
       environment.usuario = this.usuarioLogin.usuario;
       environment.token = this.usuarioLogin.token;
       environment.id = this.usuarioLogin.id;
-      // console.log("🚀 ~ file: cadastro.component.ts ~ line 36 ~ CadastroComponent ~ this.auth.logar ~ environment", environment)
+      console.log("🚀 ~ file: cadastro.component.ts ~ line 36 ~ CadastroComponent ~ this.auth.logar ~ environment", environment)
       // alert('logou')
       this.router.navigate(['/inicio']);
+
     }, (error) => {
       if (error.status === 401){
         alert('Usuário ou senha inválido')

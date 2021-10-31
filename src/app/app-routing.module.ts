@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaprodutosComponent } from './listaprodutos/listaprodutos.component';
 
-const routes: Routes = [
+export const routes: Routes = [
 
   {path: '', redirectTo: 'inicio', pathMatch:'full'},
   {path: 'inicio', component: InicioComponent},
