@@ -13,6 +13,10 @@ export class ListaprodutosComponent implements OnInit {
   listaProdutos: Produto[] = [];
   listaCategorias: Categoria[] = [];
   produto: Produto = new Produto();
+  idValido: number = 0
+  idCategoria: number;
+  categoria2: Categoria = new Categoria();
+
   constructor(
     private prod: ProdutoService, 
     private cat: CategoriaService
@@ -21,12 +25,14 @@ export class ListaprodutosComponent implements OnInit {
   ngOnInit() {
     this.getProdutos();
     this.getCategorias();
-    this.getProdutoById(4);
+    
   }
 
   getProdutos() {
     this.prod.getAllProdutos().subscribe((produtos: Produto[]) => {
       this.listaProdutos = produtos;
+      this.idValido = this.listaProdutos[0].id;
+      this.getProdutoById(this.idValido)
     });
   }
 
@@ -42,11 +48,25 @@ export class ListaprodutosComponent implements OnInit {
     });
   }
 
-  editar() {}
+  getCatById(){
+    this.cat.getCategoriaById(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria2 = resp;
+      console.log("🚀 ~ file: cadprodutos.component.ts ~ line 56 ~ CadprodutosComponent ~ this.cat.getCategoriaById ~ this.categoria", this.categoria2)
+    });
+  }
+
+  editar() {
+    this.prod.putProduto(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp;
+      alert('Produto atualizado com sucesso');
+      this.getProdutos();
+    })
+  }
 
   deletarProduto() {
     this.prod.deleteProduto(this.produto.id).subscribe(() => {
       alert('Produto deletado com sucesso!');
+      this.getProdutos();
     });
   }
 }

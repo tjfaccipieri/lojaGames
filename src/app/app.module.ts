@@ -6,11 +6,11 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { OrderModule } from "ngx-order-pipe";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CarouselModule } from "ngx-owl-carousel-o";
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { HashLocationStrategy, registerLocaleData } from '@angular/common';
 import localept from '@angular/common/locales/pt';
+
+import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ProdutosComponent } from './produtos/produtos.component';
@@ -20,7 +20,6 @@ import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
 import { ListaprodutosComponent } from './listaprodutos/listaprodutos.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
 import { RodapeComponent } from './rodape/rodape.component';
-import { RouterModule } from '@angular/router';
 
 
 registerLocaleData(localept, 'pt');

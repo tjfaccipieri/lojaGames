@@ -20,7 +20,7 @@
       <!-- !barra de pesquisa -->
       <div class="col-2 d-flex align-items-center justify-content-center" *ngIf='!auth.logado()'>
         <small class="text-white text-center">
-          Faça <a routerLink='/login' class="link">login</a> <br> ou <a routerLink='/cadastro' class="link">cadastre-se</a>
+          Faça <a routerLink='/login' class="link">login</a> <br> ou <a routerLink='/login' class="link">cadastre-se</a>
         </small>
       </div>
       <div class="col-2 d-flex flex-column align-items-center justify-content-center" *ngIf='auth.logado()'>

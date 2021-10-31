@@ -33,9 +33,16 @@
               {{ produto.descricao }}
             </td>
             <td>{{ produto.categoria.tipo }}</td>
-            <td>{{ produto.preco | currency: 'BRL' }}</td>
+            <td>{{ produto.preco | currency: "BRL" }}</td>
             <td class="d-flex justify-content-around">
-              <button class="btn btn-outline-primary">Editar</button>
+              <button
+                class="btn btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#editarProdutoModal"
+                (click)='getProdutoById(produto.id)'
+              >
+                Editar
+              </button>
               <button
                 class="btn btn-outline-danger"
                 data-bs-toggle="modal"
@@ -52,7 +59,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- ? Modal deleteProduto -->
 <div
   class="modal fade"
   id="apagarProdutoModal"
@@ -74,7 +81,7 @@
       <div class="modal-body">
         <p>
           Você está prestes a apagar o produto: {{ produto.nome }} para a
-          plataforma: {{produto.categoria.tipo}}.
+          plataforma: {{ produto.categoria.tipo }}.
         </p>
         <p>Você tem certeza disso?</p>
       </div>
@@ -82,8 +89,134 @@
         <button type="button" class="btn btn-info" data-bs-dismiss="modal">
           Cancelar
         </button>
-        <button type="button" class="btn btn-outline-danger">Apagar</button>
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          (click)="deletarProduto()"
+          data-bs-dismiss="modal"
+        >
+          Apagar
+        </button>
       </div>
     </div>
   </div>
 </div>
+<!-- ? Fim modal deleteProduto -->
+
+<!-- ! modal putProduto -->
+<div
+  class="modal fade"
+  id="editarProdutoModal"
+  tabindex="-1"
+  aria-labelledby="editarProdutoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarProdutoModalLabel">Editar produto</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form action="" class="d-flex flex-column">
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nome"
+              name="nome"
+              placeholder="Nome do produto"
+              [(ngModel)]="produto.nome"
+            />
+          </div>
+          <div class="form-group mb-2">
+            <label for="foto">Foto:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="foto"
+              name="foto"
+              placeholder="Foto do produto (url)"
+              [(ngModel)]="produto.foto"
+            />
+          </div>
+          <div class="form-group mb-2">
+            <label for="categoria">Plataforma:</label>
+            <select
+              class="form-control"
+              id="categoria"
+              name="categoria"
+              [(ngModel)]="idCategoria"
+              (change)="getCatById()"
+            >
+              <option
+                *ngFor="let categoria of listaCategorias"
+                [value]="categoria.id"
+              >
+                {{ categoria.tipo }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group mb-2">
+            <label for="descricao">Tipo:</label>
+            <select
+              name="tipo"
+              id="tipo"
+              class="form-control"
+              [(ngModel)]="produto.tipo"
+            >
+              <option value="jogo">Jogo</option>
+              <option value="periferico">Periférico</option>
+            </select>
+          </div>
+          <div class="form-group mb-2">
+            <label for="preco">Preço:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="preco"
+              name="preco"
+              placeholder="Preço do produto"
+              [(ngModel)]="produto.preco"
+            />
+          </div>
+          <div class="form-group mb-2">
+            <label for="descricao">Descrição:</label>
+            <textarea
+              class="form-control"
+              id="descricao"
+              name="descricao"
+              rows="3"
+              placeholder="Descrição do produto"
+              [(ngModel)]="produto.descricao"
+            ></textarea>
+          </div>
+          <div class="form-group mb-2">
+            <label for="quantidade">Quantidade:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="quantidade"
+              name="quantidade"
+              placeholder="Quantidade do produto"
+              [(ngModel)]="produto.quantidade"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-primary" (click)='editar()'>Atualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ! modal putProduto -->

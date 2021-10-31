@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
       environment.usuario = this.usuarioLogin.usuario;
       environment.token = this.usuarioLogin.token;
       environment.id = this.usuarioLogin.id;
+      environment.tipo = this.usuarioLogin.tipo
       console.log("🚀 ~ file: cadastro.component.ts ~ line 36 ~ CadastroComponent ~ this.auth.logar ~ environment", environment)
       // alert('logou')
       this.router.navigate(['/inicio']).then(() => {

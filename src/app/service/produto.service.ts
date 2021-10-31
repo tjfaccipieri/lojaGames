@@ -70,7 +70,7 @@ export class ProdutoService {
 
   deleteProduto(id: number) {
     return this.http.delete<Produto>(
-      `https://lojagamesbackend.herokuapp.com/produtos/${id}`
+      `https://lojagamesbackend.herokuapp.com/produtos/${id}`, this.token
     );
   }
 }
