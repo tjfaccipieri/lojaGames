@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
       environment.id = this.usuarioLogin.id;
       console.log("🚀 ~ file: cadastro.component.ts ~ line 36 ~ CadastroComponent ~ this.auth.logar ~ environment", environment)
       // alert('logou')
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['/inicio']).then(() => {
+        
+      });
 
     }, (error) => {
       if (error.status === 401){

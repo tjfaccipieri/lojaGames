@@ -25,9 +25,9 @@
       </div>
       <div class="col-2 d-flex flex-column align-items-center justify-content-center" *ngIf='auth.logado()'>
         <small class="text-white text-center">
-          Olá {{ nome }} 
+          Olá {{ this.auth.nome() }} 
         </small>
-        <small> <a routerLink='/cadprodutos'>Cadastrar itens</a> </small>
+        <small *ngIf='auth.admin()'> <a routerLink='/cadprodutos'>Cadastrar itens</a> </small>
       </div>
       <div class="col-2 d-flex align-items-center fs-4 justify-content-evenly">
         <i class="fa fa-shopping-cart icons" aria-hidden="true"></i>

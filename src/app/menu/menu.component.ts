@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
@@ -26,7 +26,8 @@ export class MenuComponent implements OnInit {
     public auth: AuthService,
     private prod: ProdutoService,
     private catg: CategoriaService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -34,14 +35,8 @@ export class MenuComponent implements OnInit {
 
     this.getAllCategorias();
     this.getAllProdutos();
-    this.nomee()
   }
 
-  getUserById(){
-    this.auth.getUsuarioById(this.userId).subscribe((resp: Usuario)=>{
-      this.usuario = resp;
-    })
-  }
 
   getAllCategorias() {
     this.catg.getAllCategorias().subscribe((resp: Categoria[]) => {
@@ -55,11 +50,7 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  nomee(){
-    if (environment.nome !=''){
-      this.nome == environment.nome
-    }
-  }
+
 
   sair(){
     environment.token = ''

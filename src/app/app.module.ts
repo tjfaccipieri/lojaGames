@@ -7,7 +7,7 @@ import { OrderModule } from "ngx-order-pipe";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CarouselModule } from "ngx-owl-carousel-o";
 
-import { AppRoutingModule, routes } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HashLocationStrategy, registerLocaleData } from '@angular/common';
 import localept from '@angular/common/locales/pt';
@@ -46,10 +46,8 @@ registerLocaleData(localept, 'pt');
     ModalModule.forRoot(),
     OrderModule,
     BrowserAnimationsModule,
-    CarouselModule,
-    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
+    CarouselModule
   ],
-  exports: [RouterModule],
 
   providers: [{
     provide: LOCALE_ID,

@@ -72,6 +72,14 @@ export class AuthService {
     return ok;
   }
 
+  nome(){
+    let nome: string = ''
+    if (environment.nome != ''){
+      nome = environment.nome
+    }
+    return nome;
+  }
+
   admin(){
     let ok: boolean = false;
     if (environment.tipo == 'admin'){
