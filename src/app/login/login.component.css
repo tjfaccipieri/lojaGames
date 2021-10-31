@@ -1,2 +1,17 @@
+.fa-eye{
+  position: absolute;
+  top: 35px;
+  right: 15px;
+  cursor: pointer;
+  color: var(--purple-hover);
+}
 
+.senha {
+  position: relative;
+}
+
+h2 {
+  color: var(--purple-hover);
+  font-weight: 700;
+}
 

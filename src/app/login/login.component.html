@@ -7,9 +7,38 @@
           <form action="" class="w-100">
             <label for="usuario">Nome de usuário:</label>
             <input type="text" name="usuario" id="usuario" class="form-control" [(ngModel)]='usuarioLogin.usuario'>
-            <label for="usuario">Senha:</label>
-            <input type="text" name="senha" id="senha" class="form-control" [(ngModel)]='usuarioLogin.senha'>
-            <button class="btn btn-outline-dark mt-3 w-100">Entrar</button>
+            <div class='senha'>
+              <label for="usuario">Senha:</label>
+              <input type="password" name="senhaLogin" id="senhaLogin" class="form-control" [(ngModel)]='usuarioLogin.senha'>
+              <i class="fa fa-eye olho" aria-hidden="true" (click)='checkSenhaLogin()'></i>
+            </div>
+            <button class="btn btn-outline-dark mt-3 w-100" (click)='logar()'>Entrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+      <div class="col-10">
+        <div class="row">
+          <h2 class="text-center">Criar uma conta</h2>
+          <form action="" class="w-100">
+            <label for="nome">Nome completo:</label>
+            <input type="text" name='nome' id='nome' class="form-control" [(ngModel)]='usuario.nome'>
+            <label for="nome">Nome de usuario:</label>
+            <input type="text" name='usuario' id='usuario' class="form-control" [(ngModel)]='usuario.usuario'>
+            <label for="nome">Data de nascimento:</label>
+            <input type="date" name='nascimento' id='nascimento' class="form-control" [(ngModel)]='usuario.dataNascimento'>
+            <div class='senha'>
+              <label for="usuario">Senha:</label>
+              <input type="password" name="senha" id="senha" class="form-control" (input)='confirmarSenha($event)'>
+              <i class="fa fa-eye olho" aria-hidden="true" (click)='checkSenhaCad()' ></i>
+            </div>
+            <div class='senha'>
+              <label for="usuario">Senha:</label>
+              <input type="password" name="confirmSenha" id="confirmSenha" class="form-control" [(ngModel)]='usuario.senha'>
+              <i class="fa fa-eye olho" aria-hidden="true" (click)='checkConfirmSenha()'></i>
+            </div>
+            <button class="btn btn-outline-dark mt-3 w-100" (click)='cadastrar()'>Cadastrar</button>
           </form>
         </div>
       </div>
