@@ -1,37 +1,22 @@
-a {
-  text-decoration: none;
-  color: #000
+.fa-eye{
+  position: absolute;
+  top: 35px;
+  right: 15px;
+  cursor: pointer;
+  color: var(--purple-hover);
 }
 
-a:last-child {
-  color: #db0a0a
+.senha {
+  position: relative;
 }
 
-.inputForm {
-  border: 0;
-  border-bottom: 1px solid #03024d;
-  color: #03024d;
-  padding: 0.5rem;
-  background: transparent;
-  width: 100%;
-  text-align: center;
+h2 {
+  color: var(--purple-hover);
+  font-weight: 700;
 }
 
-.inputForm::placeholder{
-  color: #03024d;
-  text-align: center;
-}
-
-.inputForm::-webkit-calendar-picker-indicator{
-  display: none
-}
-
-.borderRadius{
-  border-radius: 1.5rem;
-  background-color: #ffffffd0;
-  width: 100%;
-  border: 1px solid #000;
-  box-shadow: 5px 8px 6px #03024faa;
-  padding: 2rem;
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none !important;
 }
 

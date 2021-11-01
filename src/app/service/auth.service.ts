@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
+import { MenuComponent } from '../menu/menu.component';
 
 @Injectable({
   providedIn: 'root',
@@ -69,6 +70,14 @@ export class AuthService {
       ok = true;
     }
     return ok;
+  }
+
+  nome(){
+    let nome: string = ''
+    if (environment.nome != ''){
+      nome = environment.nome
+    }
+    return nome;
   }
 
   admin(){

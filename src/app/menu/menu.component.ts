@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
-import { UsuarioLogin } from '../model/UsuarioLogin';
+import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
@@ -15,9 +15,9 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class MenuComponent implements OnInit {
 
-  usuarioLogin: UsuarioLogin = new UsuarioLogin()
-  
-
+  nome = environment.nome
+  userId = environment.id
+  usuario: Usuario = new Usuario();
 
   listaCategorias: Categoria[];
   listaProdutos: Produto[];
@@ -26,7 +26,8 @@ export class MenuComponent implements OnInit {
     public auth: AuthService,
     private prod: ProdutoService,
     private catg: CategoriaService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -35,6 +36,7 @@ export class MenuComponent implements OnInit {
     this.getAllCategorias();
     this.getAllProdutos();
   }
+
 
   getAllCategorias() {
     this.catg.getAllCategorias().subscribe((resp: Categoria[]) => {
@@ -48,15 +50,7 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  logar(){
-    this.auth.logar(this.usuarioLogin).subscribe((resp: UsuarioLogin)=>{
-      this.usuarioLogin = resp
-      environment.nome = this.usuarioLogin.nome
-      environment.usuario = this.usuarioLogin.usuario
-      environment.token = this.usuarioLogin.token
-      this.router.navigate(['/inicio'])
-    })
-  }
+
 
   sair(){
     environment.token = ''
