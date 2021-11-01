@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from "ngx-bootstrap/modal";
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { OrderModule } from "ngx-order-pipe";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CarouselModule } from "ngx-owl-carousel-o";
@@ -45,7 +46,8 @@ registerLocaleData(localept, 'pt');
     ModalModule.forRoot(),
     OrderModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    BsDatepickerModule.forRoot(),
   ],
 
   providers: [{

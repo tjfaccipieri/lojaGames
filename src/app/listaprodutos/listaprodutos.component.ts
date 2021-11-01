@@ -15,7 +15,7 @@ export class ListaprodutosComponent implements OnInit {
   produto: Produto = new Produto();
   idValido: number = 0
   idCategoria: number;
-  categoria2: Categoria = new Categoria();
+  categoria: Categoria = new Categoria();
 
   constructor(
     private prod: ProdutoService, 
@@ -31,7 +31,7 @@ export class ListaprodutosComponent implements OnInit {
   getProdutos() {
     this.prod.getAllProdutos().subscribe((produtos: Produto[]) => {
       this.listaProdutos = produtos;
-      this.listaProdutos.sort((a, b) => a.id - b.id) // ordem ascendente
+      this.listaProdutos.sort((a, b) => a.id - b.id) // ordem crescente
       // this.listaProdutos.sort((a, b) => b.id - a.id) // ordem decrescente
       this.idValido = this.listaProdutos[0].id;
       this.getProdutoById(this.idValido)
@@ -52,8 +52,8 @@ export class ListaprodutosComponent implements OnInit {
 
   getCatById(){
     this.cat.getCategoriaById(this.idCategoria).subscribe((resp: Categoria) => {
-      this.categoria2 = resp;
-      console.log("🚀 ~ file: cadprodutos.component.ts ~ line 56 ~ CadprodutosComponent ~ this.cat.getCategoriaById ~ this.categoria", this.categoria2)
+      this.categoria = resp;
+      // console.log("🚀 ~ file: cadprodutos.component.ts ~ line 56 ~ CadprodutosComponent ~ this.cat.getCategoriaById ~ this.categoria", this.categoria)
     });
   }
 
