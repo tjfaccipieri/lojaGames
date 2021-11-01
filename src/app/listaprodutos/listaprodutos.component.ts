@@ -31,6 +31,8 @@ export class ListaprodutosComponent implements OnInit {
   getProdutos() {
     this.prod.getAllProdutos().subscribe((produtos: Produto[]) => {
       this.listaProdutos = produtos;
+      this.listaProdutos.sort((a, b) => a.id - b.id) // ordem ascendente
+      // this.listaProdutos.sort((a, b) => b.id - a.id) // ordem decrescente
       this.idValido = this.listaProdutos[0].id;
       this.getProdutoById(this.idValido)
     });
