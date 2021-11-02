@@ -3,7 +3,7 @@
   top: 35px;
   right: 15px;
   cursor: pointer;
-  color: var(--purple-hover);
+  color: black;
 }
 
 .senha {
@@ -11,7 +11,7 @@
 }
 
 h2 {
-  color: var(--purple-hover);
+  color: #a2242d;
   font-weight: 700;
 }
 
