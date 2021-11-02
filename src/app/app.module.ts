@@ -21,6 +21,7 @@ import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
 import { ListaprodutosComponent } from './listaprodutos/listaprodutos.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 registerLocaleData(localept, 'pt');
@@ -35,7 +36,8 @@ registerLocaleData(localept, 'pt');
     CadprodutosComponent,
     ListaprodutosComponent,
     DetalhesProdutoComponent,
-    RodapeComponent
+    RodapeComponent,
+    CheckoutComponent
   ],
 
   imports: [
