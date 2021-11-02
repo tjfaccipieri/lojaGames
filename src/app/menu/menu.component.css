@@ -44,7 +44,7 @@ li div {
 }
 
 .pesquisaButton {
-  background-color: var(--purple);
+  background-color: #a2242d;
   border-radius: 5px;
   padding:0.750rem 2rem;
   color: var(--white);
@@ -52,7 +52,7 @@ li div {
 }
 
 .pesquisaButton:hover {
-  background-color: var(--purple-hover)
+  background-color: #c0555d
 }
 
 .menu2 {

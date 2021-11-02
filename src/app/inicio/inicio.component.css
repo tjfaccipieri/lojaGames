@@ -11,7 +11,7 @@
 }
 
 .fa-cart-plus {
-  color: #8637a4;
+  color: #a2242d;
 }
 
 .imagemPromo{
@@ -35,11 +35,15 @@
 .verMais {
   text-decoration: none;
   color: #fff;
-  background-color: #8637a4;
+  background-color: #a2242d;
   font-weight: bold;
   font-size: 1rem;
 }
 
 .verMais:hover {
   text-decoration: underline;
+}
+.btn:hover{
+  background-color: #a53e44;
+  border: 2px solid #b64149;
 }
