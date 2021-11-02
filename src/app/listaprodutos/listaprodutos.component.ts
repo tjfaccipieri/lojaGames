@@ -53,7 +53,6 @@ export class ListaprodutosComponent implements OnInit {
   getCatById(){
     this.cat.getCategoriaById(this.idCategoria).subscribe((resp: Categoria) => {
       this.categoria = resp;
-      // console.log("🚀 ~ file: cadprodutos.component.ts ~ line 56 ~ CadprodutosComponent ~ this.cat.getCategoriaById ~ this.categoria", this.categoria)
     });
   }
 
