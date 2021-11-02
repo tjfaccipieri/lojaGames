@@ -57,7 +57,7 @@ export class ListaprodutosComponent implements OnInit {
     });
   }
 
-  editar() {
+  editarProduto() {
     this.prod.putProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
       alert('Produto atualizado com sucesso');

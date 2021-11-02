@@ -7,6 +7,8 @@
   --white: #dff3e4;
   --blue-menu: #2e9ddd;
   --purple-hover: #441b53;
+  --main-red: #a2242d;
+  --main-red-hover: #c0555d;
 }
 .fundo{
   background-color: var(--black);

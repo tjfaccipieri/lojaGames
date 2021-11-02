@@ -42,73 +42,6 @@ export class InicioComponent implements OnInit {
     });
   }
 
-  dynamicSlides = [
-    {
-      id: 1,
-      src: 'https://via.placeholder.com/900/92c952',
-      alt: 'Side 1',
-      title: 'Side 1',
-      name: 'Promoção',
-      value: '14.99',
-    },
-    {
-      id: 2,
-      src: 'https://via.placeholder.com/900/771796',
-      alt: 'Side 2',
-      title: 'Side 2',
-      name: 'Promoção',
-      value: '14.99',
-    },
-    {
-      id: 3,
-      src: 'https://via.placeholder.com/900/24f355',
-      alt: 'Side 3',
-      title: 'Side 3',
-      name: 'Promoção',
-      value: '14.99',
-    },
-    {
-      id: 4,
-      src: 'https://via.placeholder.com/900/d32776',
-      alt: 'Side 4',
-      title: 'Side 4',
-      name: 'Promoção',
-      value: '14.99',
-    },
-    {
-      id: 5,
-      src: 'https://via.placeholder.com/900/f66b97',
-      alt: 'Side 5',
-      title: 'Side 5',
-      name: 'Promoção',
-      value: '14.99',
-    },
-    {
-      id: 6,
-      src: 'https://via.placeholder.com/900/f66b97',
-      alt: 'Side 5',
-      title: 'Side 5',
-      name: 'Promoção',
-      value: '14.99',
-    },
-    {
-      id: 7,
-      src: 'https://via.placeholder.com/900/f66b97',
-      alt: 'Side 5',
-      title: 'Side 5',
-      name: 'Promoção',
-      value: '14.99',
-    },
-    {
-      id: 8,
-      src: 'https://via.placeholder.com/900/f66b97',
-      alt: 'Side 5',
-      title: 'Side 5',
-      name: 'Promoção',
-      value: '14.99',
-    },
-  ];
-
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -120,16 +53,16 @@ export class InicioComponent implements OnInit {
     autoplayTimeout: 2000,
     autoplaySpeed: 500,
     autoplayHoverPause: true,
-    // navText: [
-    //   '<i class="fa fa-angle-left" aria-hidden="true" ></i>',
-    //   '<i class="fa fa-angle-right" aria-hidden="true" ></i>',
-    // ],
+    navText: [
+      '<i class="fa fa-angle-left" aria-hidden="true" ></i> P',
+      '<i class="fa fa-angle-right" aria-hidden="true" ></i>',
+    ],
     responsive: {
       0: {
         items: 1,
       },
       400: {
-        items: 2,
+        items: 1,
       },
       760: {
         items: 3,

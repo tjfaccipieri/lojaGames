@@ -1,3 +1,5 @@
+<!-- TODO ainda precisa ajustar o getCatById pra funcionar direito no modal -->
+
 <div class="container">
   <button
     class="btn btn-outline-dark mb-3"
@@ -8,6 +10,16 @@
     aria-controls="produtosTable"
   >
     Lista de produtos Cadastrados
+  </button>
+  <button
+    class="btn btn-outline-dark mb-3"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#categoriasTable"
+    aria-expanded="false"
+    aria-controls="categoriasTable"
+  >
+    Lista de categorias cadastradas
   </button>
 
   <div class="collapse" id="produtosTable">
@@ -34,6 +46,48 @@
             </td>
             <td>{{ produto.categoria.tipo }}</td>
             <td>{{ produto.preco | currency: "BRL" }}</td>
+            <td class="d-flex justify-content-around">
+              <button
+                class="btn btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#editarProdutoModal"
+                (click)='getProdutoById(produto.id)'
+              >
+                Editar
+              </button>
+              <button
+                class="btn btn-outline-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#apagarProdutoModal"
+                (click)="getProdutoById(produto.id)"
+              >
+                Remover
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="collapse" id="categoriasTable">
+    <div id="categoriasTable">
+      <table
+        class="table table-striped table-bordered text-center"
+      >
+        <thead>
+          <tr class="table-info">
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let categoria of listaCategorias">
+            <td>{{ categoria.id }}</td>
+            <td>{{categoria.tipo }}</td>
+            
+            <td>{{ categoria.numeroProdutos }}</td>
             <td class="d-flex justify-content-around">
               <button
                 class="btn btn-outline-primary"
@@ -214,9 +268,52 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancelar
         </button>
-        <button type="button" class="btn btn-primary" (click)='editar()'>Atualizar</button>
+        <button type="button" class="btn btn-primary" (click)='editarProduto()'>Atualizar</button>
       </div>
     </div>
   </div>
 </div>
 <!-- ! modal putProduto -->
+
+<!-- * Modal Delete Categoria -->
+<div
+  class="modal fade"
+  id="apagarCategoriaModal"
+  tabindex="-1"
+  aria-labelledby="apagarCategoriaModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="apagarCategoriaModalLabel">Apagar categoria</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Você está prestes a apagar a categoria {{categoria.tipo}}.
+        </p>
+        <p>Você tem certeza disso?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          (click)="deletarProduto()"
+          data-bs-dismiss="modal"
+        >
+          Apagar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- * Modal Delete Categoria -->
