@@ -3,3 +3,8 @@
   background-color: var(--black);
   padding: 1rem 0;
 }
+
+.rodape a {
+  color: var(--white);
+  text-decoration: none;
+}
