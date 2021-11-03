@@ -8,22 +8,24 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaprodutosComponent } from './listaprodutos/listaprodutos.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'inicio', pathMatch:'full'},
-  {path: 'inicio', component: InicioComponent},
-  {path: 'cadastro', component: CadastroComponent},
-  {path: 'produtos', component: ProdutosComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'cadprodutos', component: CadprodutosComponent},
-  {path: 'listaProdutos', component: ListaprodutosComponent},
-  {path: 'detalhesProduto/:id', component: DetalhesProdutoComponent},
-  {path: 'checkout', component: CheckoutComponent},
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: 'inicio', component: InicioComponent },
+  { path: 'cadastro', component: CadastroComponent },
+  { path: 'produtos', component: ProdutosComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'cadprodutos', component: CadprodutosComponent },
+  { path: 'listaProdutos', component: ListaprodutosComponent },
+  { path: 'detalhesProduto/:id', component: DetalhesProdutoComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'sobre', component: SobreComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
