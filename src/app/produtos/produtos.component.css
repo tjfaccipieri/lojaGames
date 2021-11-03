@@ -1,148 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
-
-:root {
-  --main-width-card: 250px;
-  --main-width-card-mini: 60px;
-  --main-decalage-desc: 22px;
-  --main-decalage-shadow: 6px;
-  --main-blue-color: #06a2dc;
-  --main-white-color: #47cf73;
-  --main-red-color: #ffdd40;
-}
-
-* {
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: -1px;
-}
-
-main { position: relative; width: 100vw; }
-
-#main { text-align: center; }
-
-main {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  display: block;
-  text-align: center;
-  width: 400px;
-  margin: 20px auto;
-  color: white;
-  font-size: 3em;
-  position: relative;
-  font-weight: 200;
-  letter-spacing: -4px;
-  opacity: .8;
-}
-
-body {
-  margin: 0;
-  height: 100vh;
-  display: grid;
-  background-color: #444757;
-}
-
-svg path { fill: white; }
-
-.profile-card {
-  width: var(--main-width-card);
-  height: var(--main-width-card);
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  margin: 30px;
-  text-align: left;
-  color: var(--main-blue-color)
-}
-
-.profile-card-description, .profile-card-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-}
-
-.profile-card-image {
-  z-index: 2;
-  top: 0;
-  left: 0;
-  transition: top .3s, left .3s, width .3s .3s, height .3s .3s, border-radius .3s .45s;
-}
-
-.profile-card-description {
-  background-color: white;
-  z-index: 1;
-  top: var(--main-decalage-desc);
-  left: var(--main-decalage-desc);
+.elipse {
   overflow: hidden;
-  transition: top .3s, left .3s, width .3s, height .3s;
+  text-overflow: ellipsis;
+  font-size: 0.750rem;
 }
 
-.profile-card-description-elements {
-  position: absolute;
-  top: calc(var(--main-width-card) - 20px);
-  padding: 0 10px;
-  transition: top .3s;
+.comprar {
+  background: var(--main-red);
+  color: var(--white);
 }
 
-.profile-card-description-elements > h2 {
-  margin: 0;
-  font-size: 1em;
-  color: #444444;
-  transition: font-size .3s .0s, padding-left .3s .0s;
+.comprar:hover {
+  background: var(--main-red-hover);
+  cursor:pointer
 }
 
-.profile-card-description-elements > hr { opacity: 0; }
-
-.profile-card-description-elements > label {
-  margin: 0;
-  font-size: 1em;
+.fa-cart-plus {
+  padding: 5px 15px;
+  border-radius: 1rem;
+  margin-left: -12px;
 }
 
-.profile-card-description-elements > p {
-  margin: 0;
-  font-size: 0.8em;
-  color: black;
+.text-small {
+  font-size: 0.750rem;
 }
 
-.profile-card:hover .profile-card-image {
-  top: 10px;
-  left: 10px;
-  width: var(--main-width-card-mini);
-  height: var(--main-width-card-mini);
-  border-radius: 50%;
+.imagem-card {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
-
-.profile-card:hover .profile-card-description {
-  top: 0;
-  left: 0;
-  width: calc(var(--main-width-card) + 20px);
-  height: calc(var(--main-width-card) + 20px);
-  transition: top .3s, left .3s, width .3s .3s, height .3s .3s;
-}
-
-.profile-card:hover .profile-card-description-elements {
-  transition: top .3s .3s;
-  top: calc(var(--main-width-card-mini) - 45px);
-}
-
-.profile-card:hover .profile-card-description-elements > h2 {
-  font-size: 1.2em;
-  color: gray;
-}
-
-.profile-card:hover .profile-card-description-elements > label {
-  font-size: 0.9em;
-  color: gray;
-}
-
-.profile-card:hover .profile-card-description-elements > h2, .profile-card:hover .profile-card-description-elements > label {
-  padding-left: 70px;
-  transition: font-size .3s .3s, padding-left .3s .3s;
-}
-
-#avatar { display: none; }

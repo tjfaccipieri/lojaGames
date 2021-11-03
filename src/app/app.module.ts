@@ -37,7 +37,7 @@ registerLocaleData(localept, 'pt');
     ListaprodutosComponent,
     DetalhesProdutoComponent,
     RodapeComponent,
-    CheckoutComponent
+    CheckoutComponent,
   ],
 
   imports: [
