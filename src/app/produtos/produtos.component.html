@@ -6,11 +6,16 @@
           <img [src]="produto.foto" alt="Card image cap" class="imagem-card">
           <div class="card-body p-0">
             <p class="card-text text-center fw-bold text-nowrap elipse m-1">{{produto.nome}}</p>
-            <div class="d-flex flex-column justify-content-between">
-              <small class="m-1 fw-bold text-secondary text-decoration-line-through">{{produto.preco | currency: "BRL"}}</small>
-              <h5 class="mx-1 mb-0">{{produto.preco - produto.preco * 0.15 | currency: "BRL"}} </h5> 
-              <small class="mx-1 mt-0 text-small">A vista no PIX</small>
-              <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
+            <div class="d-flex">
+              <div class="d-flex flex-column justify-content-between m-2">
+                <small class="m-1 fw-bold text-secondary text-decoration-line-through">{{produto.preco | currency: "BRL"}}</small>
+                <h5 class="mx-1 mb-0">{{produto.preco - produto.preco * 0.15 | currency: "BRL"}} </h5> 
+                <small class="mx-1 mt-0 text-small">A vista no PIX</small>
+                <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
+              </div>
+              <div class="w-100 d-flex justify-content-center align-items-center">
+                <img [src]="produto.categoria.foto" alt="" class='image-logo'>
+              </div>
             </div>
             <button class="btn w-100 comprar ">
                 <i class="fa fa-cart-plus" aria-hidden="true"></i> <span>Comprar</span>
