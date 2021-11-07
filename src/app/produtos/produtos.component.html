@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="container">
     <div class="row p-0 m-0 p-sm-0 m-sm-0">
-      <div class="col-md-2 col-sm-12 m-md-3 m-sm-0 my-3" *ngFor='let produto of listaProdutos'>
+      <div class="produto-card my-3" *ngFor='let produto of listaProdutos'>
         <div class="card">
           <img [src]="produto.foto" alt="Card image cap" class="imagem-card">
           <div class="card-body p-0">
