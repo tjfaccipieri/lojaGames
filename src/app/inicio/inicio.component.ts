@@ -62,7 +62,7 @@ export class InicioComponent implements OnInit {
         items: 1,
       },
       400: {
-        items: 1,
+        items: 2,
       },
       760: {
         items: 3,
