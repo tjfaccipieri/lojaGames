@@ -5,12 +5,12 @@
         <div class="card">
           <img [src]="produto.foto" alt="Card image cap" class="imagem-card">
           <div class="card-body p-0">
-            <p class="card-text text-center fw-bold text-nowrap elipse m-1">{{produto.nome}}</p>
+            <p class="card-text text-center fw-bold text-nowrap elipse m-1 fs-6">{{produto.nome}}</p>
             <div class="d-flex">
               <div class="d-flex flex-column justify-content-between m-2">
-                <small class="m-1 fw-bold text-secondary text-decoration-line-through">{{produto.preco | currency: "BRL"}}</small>
-                <h5 class="mx-1 mb-0">{{produto.preco - produto.preco * 0.15 | currency: "BRL"}} </h5> 
-                <small class="mx-1 mt-0 text-small">A vista no PIX</small>
+                <small class="m-1 fw-bold text-decoration-line-through text-red">{{produto.preco | currency: "BRL"}}</small>
+                <h5 class="mx-1 mb-0 text-blue">{{produto.preco - produto.preco * 0.15 | currency: "BRL"}} </h5> 
+                <small class="mx-1 mt-0 text-small text-blue">A vista no PIX</small>
                 <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
               </div>
               <div class="w-100 d-flex justify-content-center align-items-center">
