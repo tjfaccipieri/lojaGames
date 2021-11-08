@@ -23,6 +23,7 @@ import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.co
 import { RodapeComponent } from './rodape/rodape.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { ContatoComponent } from './contato/contato.component';
 
 
 registerLocaleData(localept, 'pt');
@@ -39,7 +40,8 @@ registerLocaleData(localept, 'pt');
     DetalhesProdutoComponent,
     RodapeComponent,
     CheckoutComponent,
-    SobreComponent
+    SobreComponent,
+    ContatoComponent
   ],
 
   imports: [
