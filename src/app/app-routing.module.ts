@@ -12,7 +12,6 @@ import { SobreComponent } from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
 
 const routes: Routes = [
-
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: 'inicio', component: InicioComponent },
   { path: 'cadastro', component: CadastroComponent },
@@ -23,11 +22,11 @@ const routes: Routes = [
   { path: 'detalhesProduto/:id', component: DetalhesProdutoComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'sobre', component: SobreComponent },
-  {path: 'contato', component: ContatoComponent},
+  { path: 'contato', component: ContatoComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
