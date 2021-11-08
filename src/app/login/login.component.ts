@@ -19,8 +19,10 @@ export class LoginComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
-    // this.checkSenha();
+    // this.checkSenhaLogin();
   }
+
+
   logar() {
     this.auth.logar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
       this.usuarioLogin = resp;
@@ -29,8 +31,6 @@ export class LoginComponent implements OnInit {
       environment.token = this.usuarioLogin.token;
       environment.id = this.usuarioLogin.id;
       environment.tipo = this.usuarioLogin.tipo
-      console.log("🚀 ~ file: cadastro.component.ts ~ line 36 ~ CadastroComponent ~ this.auth.logar ~ environment", environment)
-      // alert('logou')
       this.router.navigate(['/inicio']).then(() => {
         
       });
@@ -67,6 +67,7 @@ export class LoginComponent implements OnInit {
       inputSenha?.setAttribute('type', 'password');
     }
   }
+
   checkSenhaCad() {
     let inputSenha = document.getElementById('senha');
     if (inputSenha?.getAttribute('type') == 'password') {
@@ -75,6 +76,7 @@ export class LoginComponent implements OnInit {
       inputSenha?.setAttribute('type', 'password');
     }
   }
+
   checkConfirmSenha() {
     let inputSenha = document.getElementById('confirmSenha');
     if (inputSenha?.getAttribute('type') == 'password') {

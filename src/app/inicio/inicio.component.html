@@ -1,7 +1,8 @@
 <div class="container my-4">
+  <h3 class='text-danger'>Os mais baratos:</h3>
   <div class="row w-100">
     <owl-carousel-o [options]="customOptions">
-      <ng-container *ngFor="let item of listaProdutos">
+      <ng-container *ngFor="let item of listaFiltrada">
         <ng-template carouselSlide [lerigou]="item.id">
           <div class="bordinha slidecontainer">
             <div class="imagemPromo">

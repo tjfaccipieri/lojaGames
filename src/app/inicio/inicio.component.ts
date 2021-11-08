@@ -16,6 +16,8 @@ export class InicioComponent implements OnInit {
   listaCategorias: Categoria[];
   listaProdutos: Produto[];
 
+  listaFiltrada: any = []
+
   constructor(
     public auth: AuthService,
     private prod: ProdutoService,
@@ -39,8 +41,12 @@ export class InicioComponent implements OnInit {
   getAllProdutos() {
     this.prod.getAllProdutos().subscribe((resp: Produto[]) => {
       this.listaProdutos = resp;
+      this.listaFiltrada = this.listaProdutos.sort((a, b) => a.preco - b.preco).slice(0,8)
+      console.log(this.listaFiltrada)
     });
   }
+
+
 
   customOptions: OwlOptions = {
     loop: true,

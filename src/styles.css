@@ -18,3 +18,11 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-red {
+  color: var(--dark-red)
+}
