@@ -90,8 +90,8 @@
             class="form-control"
             [(ngModel)]="produto.tipo"
           >
-            <option value="jogo">Jogo</option>
-            <option value="periferico">Periférico</option>
+              <option value="jogo">Jogo</option>
+              <option value="periferico">Periférico</option>
           </select>
         </div>
         <div class="form-group mb-2">
@@ -117,7 +117,46 @@
           ></textarea>
         </div>
         <div class="form-group mb-2">
-          <label for="quantidade">Quantidade:</label>
+          <label for="estilo">Estilo:</label>
+          <select
+            name="estilo"
+            id="estilo"
+            class="form-control"
+            [(ngModel)]="produto.estilo"
+          >
+              <option value="rpg">RPG</option>
+              <option value="arcade">Arcade</option>
+              <option value="simulacao">Simulação</option>
+              <option value="corrida">Corrida</option>
+              <option value="luta">Luta</option>
+              <option value="aventura">Aventura</option>
+              <option value="infantil">Infantil</option>
+          </select>
+        </div>
+        <div class="form-group mb-2">
+          <label for="publisher">Publisher:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="publisher"
+            name="publisher"
+            placeholder="Publisher do produto"
+            [(ngModel)]="produto.publisher"
+          />
+        </div>
+        <div class="form-group mb-2">
+          <label for="quantidade">Data de Lançamento:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dataLancamento"
+            name="dataLancamento"
+            [(ngModel)]="produto.dataLancamento"
+          />
+        </div>
+
+        <div class="form-group mb-2">
+          <label for="quantidade">Quantidade em estoque:</label>
           <input
             type="number"
             class="form-control"
