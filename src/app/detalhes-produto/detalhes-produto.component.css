@@ -16,6 +16,25 @@
 
 .preco {
   color: #a2242d;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
+
+.pix {
+  color: var(--blue);
   font-weight: 700;
-  font-size: 2.5rem
+  font-size: 2rem;
+
+}
+
+.imagem-produto{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+
+}
+
+.pequeno {
+  font-size: 0.750rem;
 }
