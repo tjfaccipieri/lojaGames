@@ -1,44 +1,48 @@
 <div class="container-fluid">
   <div class="container-md">
     <div class="row p-0 m-0 p-sm-0 m-sm-0">
-      <div class="produto-card my-3" *ngFor='let produto of listaProdutos'>
+      <div class="produto-card my-3" *ngFor="let produto of listaProdutos">
         <div class="card">
-          <img [src]="produto.foto" alt="Card image cap" class="imagem-card">
+          
+            <img
+              [src]="produto.foto"
+              alt="Card image cap"
+              class="imagem-card"
+            />
+         
           <div class="card-body p-0">
-            <p class="card-text text-center fw-bold text-nowrap elipse m-1 fs-6">{{produto.nome}}</p>
+            <p
+              class="card-text text-center fw-bold text-nowrap elipse m-1 fs-6"
+            >
+              {{ produto.nome }}
+            </p>
             <div class="d-flex">
               <div class="d-flex flex-column justify-content-between m-2">
-                <small class="m-1 fw-bold text-decoration-line-through text-red">{{produto.preco | currency: "BRL"}}</small>
-                <h5 class="mx-1 mb-0 text-blue">{{produto.preco - produto.preco * 0.15 | currency: "BRL"}} </h5> 
-                <small class="mx-1 mt-0 text-small text-blue">A vista no PIX</small>
+                <small
+                  class="m-1 fw-bold text-decoration-line-through text-red"
+                  >{{ produto.preco | currency: "BRL" }}</small
+                >
+                <h5 class="mx-1 mb-0 text-blue">
+                  {{ produto.preco - produto.preco * 0.15 | currency: "BRL" }}
+                </h5>
+                <small class="mx-1 mt-0 text-small text-blue"
+                  >A vista no PIX</small
+                >
                 <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
               </div>
-              <div class="w-100 d-flex justify-content-center align-items-center">
-                <img [src]="produto.categoria.foto" alt="" class='image-logo'>
+              <div
+                class="w-100 d-flex justify-content-center align-items-center"
+              >
+                <img [src]="produto.categoria.foto" alt="" class="image-logo" />
               </div>
             </div>
-            <button class="btn w-100 comprar ">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> <span>Comprar</span>
+            <button class="btn w-100 comprar">
+              <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              <span>Comprar</span>
             </button>
           </div>
         </div>
       </div>
-      <!-- <div class="col-md-2 col-sm-12 m-md-3 m-sm-0 my-3">
-        <div class="card">
-          <img class="" src="https://i.imgur.com/vCyiubn.jpg?1" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text text-center fw-bold text-nowrap elipse">Nome do jogo fnhlkahflk h fklshlk af afhlkah al fhlka</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex flex-column">
-                <small class="m-1 fw-bold text-secondary text-decoration-line-through">R$ 299,90</small>
-                <h5 class="mx-1 mb-0">R$ 249,90 </h5> 
-                <small class="mx-1 mt-0 text-small">A vista no PIX</small>
-              </div>
-              <i class="fa fa-cart-plus comprar" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>

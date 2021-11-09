@@ -21,7 +21,7 @@ li div {
 }
 
 .barra {
-  height: 125px;
+  min-height: 125px;
 }
 
 .link {

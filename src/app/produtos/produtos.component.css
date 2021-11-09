@@ -25,9 +25,10 @@
 }
 
 .imagem-card {
-  width: 100%;
+  min-width: 100%;
   height: 274px;
   object-fit: cover;
+  
 }
 
 .image-logo {
