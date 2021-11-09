@@ -3,13 +3,13 @@
     <div class="row p-0 m-0 p-sm-0 m-sm-0">
       <div class="produto-card my-3" *ngFor="let produto of listaProdutos">
         <div class="card">
-          
+          <a [routerLink]="['/detalhesProduto', produto.id]">
             <img
               [src]="produto.foto"
               alt="Card image cap"
               class="imagem-card"
             />
-         
+          </a>
           <div class="card-body p-0">
             <p
               class="card-text text-center fw-bold text-nowrap elipse m-1 fs-6"
