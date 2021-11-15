@@ -10,6 +10,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListaprodutosComponent } from './listaprodutos/listaprodutos.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
+import { Router, NavigationEnd } from '@angular/router';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -25,8 +27,26 @@ const routes: Routes = [
   { path: 'contato', component: ContatoComponent },
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule],
+  
 })
 export class AppRoutingModule {}
+
+class MyAppComponent {
+  constructor(router: Router) {
+
+    router.events.subscribe(s => {
+      if (s instanceof NavigationEnd) {
+        const tree = router.parseUrl(router.url);
+        if (tree.fragment) {
+          const element = document.querySelector("#" + tree.fragment);
+          if (element) { element.scrollIntoView(true); }
+        }
+      }
+    });
+
+  }
+}
