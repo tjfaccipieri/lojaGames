@@ -12,5 +12,14 @@ export class ContatoComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
   }
+  scrollIntoView(anchorHash: string): void {
+    setTimeout(() => {
+        const anchor = document.getElementById(anchorHash);
+        if (anchor) {
+            anchor.focus();
+            anchor.scrollIntoView();
+        }
+    });
 
+  }
 }
