@@ -13,11 +13,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadprodutosComponent implements OnInit {
 
+  idUser: any = localStorage.getItem('id')
+  idUsuario: number = JSON.parse(this.idUser)
+
   produto: Produto = new Produto();
   categoria: Categoria = new Categoria();
   categoria2: Categoria = new Categoria();
   usuario: Usuario = new Usuario();
-  idUsuario: number = environment.id;
   idCategoria: number;
 
   listaCategorias: Categoria[] = [];
@@ -60,7 +62,7 @@ export class CadprodutosComponent implements OnInit {
   getCatById(){
     this.cat.getCategoriaById(this.idCategoria).subscribe((resp: Categoria) => {
       this.categoria2 = resp;
-      console.log("🚀 ~ file: cadprodutos.component.ts ~ line 56 ~ CadprodutosComponent ~ this.cat.getCategoriaById ~ this.categoria", this.categoria)
+      console.log("🚀 ~ file: cadprodutos.component.ts ~ line 56 ~ CadprodutosComponent ~ this.cat.getCategoriaById ~ this.categoria", this.categoria2)
     });
   }
 }
