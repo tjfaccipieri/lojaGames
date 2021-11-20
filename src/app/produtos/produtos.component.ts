@@ -33,6 +33,7 @@ export class ProdutosComponent implements OnInit {
   getAllCategorias() {
     this.catg.getAllCategorias().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp;
+      
     });
   }
 
@@ -42,5 +43,5 @@ export class ProdutosComponent implements OnInit {
       this.listaProdutos.sort((a, b) => a.preco - b.preco)
     });
   }
-
+  
 }

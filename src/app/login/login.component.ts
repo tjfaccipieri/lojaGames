@@ -22,24 +22,23 @@ export class LoginComponent implements OnInit {
     // this.checkSenhaLogin();
   }
 
-
   logar() {
-    this.auth.logar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
-      this.usuarioLogin = resp;
-      environment.nome = this.usuarioLogin.nome;
-      environment.usuario = this.usuarioLogin.usuario;
-      environment.token = this.usuarioLogin.token;
-      environment.id = this.usuarioLogin.id;
-      environment.tipo = this.usuarioLogin.tipo
-      this.router.navigate(['/inicio']).then(() => {
-        
-      });
-
-    }, (error) => {
-      if (error.status === 401){
-        alert('Usuário ou senha inválido')
+    this.auth.logar(this.usuarioLogin).subscribe(
+      (resp: UsuarioLogin) => {
+        this.usuarioLogin = resp;
+        environment.nome = this.usuarioLogin.nome;
+        environment.usuario = this.usuarioLogin.usuario;
+        environment.token = this.usuarioLogin.token;
+        environment.id = this.usuarioLogin.id;
+        environment.tipo = this.usuarioLogin.tipo;
+        this.router.navigate(['/inicio']).then(() => {});
+      },
+      (error) => {
+        if (error.status === 401) {
+          alert('Usuário ou senha inválido');
+        }
       }
-    });
+    );
   }
 
   confirmarSenha(event: any) {
@@ -48,6 +47,7 @@ export class LoginComponent implements OnInit {
 
   cadastrar() {
     this.usuario.tipo = 'cliente';
+    console.log(this.usuario);
     if (this.usuario.senha == this.confirmSenha) {
       this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
