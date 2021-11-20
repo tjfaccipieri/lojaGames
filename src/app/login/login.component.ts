@@ -19,19 +19,19 @@ export class LoginComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
-    // this.checkSenhaLogin();
+
   }
 
   logar() {
     this.auth.logar(this.usuarioLogin).subscribe(
       (resp: UsuarioLogin) => {
         this.usuarioLogin = resp;
-        environment.nome = this.usuarioLogin.nome;
-        environment.usuario = this.usuarioLogin.usuario;
-        environment.token = this.usuarioLogin.token;
-        environment.id = this.usuarioLogin.id;
-        environment.tipo = this.usuarioLogin.tipo;
-        this.router.navigate(['/inicio']).then(() => {});
+        localStorage.setItem('token', this.usuarioLogin.token);
+        localStorage.setItem('id', JSON.stringify(this.usuarioLogin.id)); //Todo na auth vou ter q parsear isso
+        localStorage.setItem('nome', this.usuarioLogin.nome);
+        localStorage.setItem('usuario', this.usuarioLogin.usuario);
+        localStorage.setItem('tipo', this.usuarioLogin.tipo);
+        location.replace('/inicio')
       },
       (error) => {
         if (error.status === 401) {
@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
 
   cadastrar() {
     this.usuario.tipo = 'cliente';
-    console.log(this.usuario);
     if (this.usuario.senha == this.confirmSenha) {
       this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
