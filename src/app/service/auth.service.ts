@@ -2,23 +2,22 @@ import { UsuarioLogin } from './../model/UsuarioLogin';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
-import { MenuComponent } from '../menu/menu.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   constructor(private http: HttpClient) {}
+  tokenSalvo: any = localStorage.getItem('token');
 
   token = {
-    headers: new HttpHeaders().set('Authorization', environment.token),
+    headers: new HttpHeaders().set('Authorization', this.tokenSalvo),
   };
 
   refreshToken() {
     this.token = {
-      headers: new HttpHeaders().set('Authorization', environment.token),
+      headers: new HttpHeaders().set('Authorization', this.tokenSalvo),
     };
   }
 
@@ -60,13 +59,13 @@ export class AuthService {
 
   deleteUsuario(id: number) {
     return this.http.delete(
-      `https://lojagamesbackend.herokuapp.com/usuarios/delete/${id}`
+      `https://lojagamesbackend.herokuapp.com/usuarios/delete/${id}`, this.token
     );
   }
 
   logado(){
     let ok: boolean = false
-    if (environment.token != ''){
+    if (this.tokenSalvo != null && this.tokenSalvo != ''){
       ok = true;
     }
     return ok;
@@ -74,17 +73,25 @@ export class AuthService {
 
   nome(){
     let nome: string = ''
-    if (environment.nome != ''){
-      nome = environment.nome
+    let nomeSalvo: any = localStorage.getItem('nome')
+    if (nomeSalvo != ''){
+      nome = nomeSalvo
     }
     return nome;
   }
 
   admin(){
     let ok: boolean = false;
-    if (environment.tipo == 'admin'){
+    let tipoSalvo: any = localStorage.getItem('tipo')
+    if (tipoSalvo == 'admin'){
       ok = true;
     }
     return ok;
   }
+
+  sair(){
+    localStorage.clear()
+    this.logado()
+  }
+  
 }

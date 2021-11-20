@@ -28,6 +28,7 @@
           Olá {{ this.auth.nome() }} 
         </small>
         <small *ngIf='auth.admin()'> <a routerLink='/cadprodutos'>Cadastrar itens</a> </small>
+        <small><a href="" (click)='sair()'>Sair</a></small>
       </div>
       <div class="col-2 d-flex align-items-center fs-4 justify-content-evenly">
         <i class="fa fa-shopping-cart icons" aria-hidden="true" routerLink='/checkout'></i>

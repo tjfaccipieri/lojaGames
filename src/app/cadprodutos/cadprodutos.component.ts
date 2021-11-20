@@ -28,7 +28,7 @@ export class CadprodutosComponent implements OnInit {
     this.cat.refreshToken();
     this.prod.refreshToken();
 
-    this.getCategorias();
+    this.getCategorias(); 
   }
 
   cadProduto(){

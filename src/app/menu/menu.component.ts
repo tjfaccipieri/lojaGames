@@ -11,12 +11,9 @@ import { ProdutoService } from '../service/produto.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-
-  nome = environment.nome
-  userId = environment.id
   usuario: Usuario = new Usuario();
 
   listaCategorias: Categoria[];
@@ -37,7 +34,6 @@ export class MenuComponent implements OnInit {
     this.getAllProdutos();
   }
 
-
   getAllCategorias() {
     this.catg.getAllCategorias().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp;
@@ -50,15 +46,7 @@ export class MenuComponent implements OnInit {
     });
   }
 
-
-
-  sair(){
-    environment.token = ''
-    environment.usuario = ''
-    environment.nome = ''
-    environment.id = 0
-    environment.tipo = ''
-    this.router.navigate(['/inicio'])
+  sair() {
+    localStorage.clear();
   }
-
 }
