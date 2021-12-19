@@ -49,4 +49,8 @@ export class MenuComponent implements OnInit {
   sair() {
     localStorage.clear();
   }
+
+  click(){
+    ;
+  }
 }

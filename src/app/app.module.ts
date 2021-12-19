@@ -24,6 +24,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
+import { CategoriasComponent } from './categorias/categorias.component';
 
 
 registerLocaleData(localept, 'pt');
@@ -41,7 +42,8 @@ registerLocaleData(localept, 'pt');
     RodapeComponent,
     CheckoutComponent,
     SobreComponent,
-    ContatoComponent
+    ContatoComponent,
+    CategoriasComponent
   ],
 
   imports: [

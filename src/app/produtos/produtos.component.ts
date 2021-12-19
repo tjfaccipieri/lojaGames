@@ -59,7 +59,7 @@ export class ProdutosComponent implements OnInit {
 
   addProduto(){
     this.carrinho.adicionar(this.produto)
-    console.log(this.carrinho.produtos)
+    // console.log(this.carrinho.produtos)
   }
   
 }

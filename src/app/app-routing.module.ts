@@ -1,3 +1,4 @@
+import { CategoriasComponent } from './categorias/categorias.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
 import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'sobre', component: SobreComponent },
   { path: 'contato', component: ContatoComponent },
+  { path: 'categoria/:id', component: CategoriasComponent },
 ];
 
 @NgModule({
