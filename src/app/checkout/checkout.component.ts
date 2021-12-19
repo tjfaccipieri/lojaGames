@@ -27,5 +27,11 @@ export class CheckoutComponent implements OnInit {
     return this.comprados.map((item) => item.preco).reduce((a, b) => a + b, 0);
   }
 
+  parcela(){
+    return this.total()/12
+  }
+
+
+
 
 }

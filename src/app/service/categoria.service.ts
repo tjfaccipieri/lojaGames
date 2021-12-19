@@ -30,7 +30,8 @@ export class CategoriaService {
 
   getCategoriaById(id: number): Observable<Categoria> {
     return this.http.get<Categoria>(
-      `https://lojagamesbackend.herokuapp.com/categorias/${id}` 
+      `https://lojagamesbackend.herokuapp.com/categorias/${id}` ,
+      this.token
     );
   }
 

@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="container">
+    <h1>{{nome}}</h1>
+    <div class="row d-flex flex-wrap">
+    <div class="produto-card my-3" *ngFor="let produto of listaCategoria.produto">
+      <div class="card">
+        <a [routerLink]="['/detalhesProduto', produto.id]">
+          <img
+            [src]="produto.foto"
+            alt="Card image cap"
+            class="imagem-card"
+          />
+        </a>
+        <div class="card-body p-0">
+          <p
+            class="card-text text-center fw-bold text-nowrap elipse m-1 fs-6"
+          >
+            {{ produto.nome }}
+          </p>
+          <div class="d-flex">
+            <div class="d-flex flex-column justify-content-between m-2">
+              <small
+                class="m-1 fw-bold text-decoration-line-through text-red"
+                >{{ produto.preco | currency: "BRL" }}</small
+              >
+              <h5 class="mx-1 mb-0 text-blue">
+                {{ produto.preco - produto.preco * 0.15 | currency: "BRL" }}
+              </h5>
+              <small class="mx-1 mt-0 text-small text-blue"
+                >A vista no PIX</small
+              >
+              <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
+            </div>
+            <div
+              class="w-100 d-flex justify-content-center align-items-center"
+            >
+              <!-- <img [src]="produto.categoria.foto" alt="" class="image-logo" /> -->
+            </div>
+          </div>
+          <button class="btn w-100 comprar" (click)='getProdById(produto.id)'>
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            <span>Comprar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
