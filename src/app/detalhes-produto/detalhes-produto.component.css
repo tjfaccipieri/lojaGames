@@ -38,3 +38,47 @@
 .pequeno {
   font-size: 0.750rem;
 }
+
+.elipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.750rem;
+}
+
+.comprar {
+  background: var(--main-red);
+  color: var(--white);
+}
+
+.comprar:hover {
+  background: var(--main-red-hover);
+  cursor:pointer
+}
+
+.fa-cart-plus {
+  padding: 5px 15px;
+  border-radius: 1rem;
+  margin-left: -12px;
+}
+
+.text-small {
+  font-size: 0.750rem;
+}
+
+.imagem-card {
+  min-width: 100%;
+  height: 274px;
+  object-fit: contain;
+  
+}
+
+.image-logo {
+  width: 30px;
+  height: auto;
+  object-fit: contain;
+} 
+
+.produto-card {
+  width: 300px;
+  min-height: 250px;
+}

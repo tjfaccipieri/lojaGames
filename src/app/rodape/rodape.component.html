@@ -6,7 +6,7 @@
         <ul class="list-unstyled">
           <li><h5 class="">Plataformas:</h5></li>
           <li *ngFor="let cat of listaCategorias">
-            <small>{{cat.tipo}}</small>
+            <small>{{ cat.tipo }}</small>
           </li>
         </ul>
       </div>
@@ -16,10 +16,18 @@
       <div class="col-md-2 d-flex justify-content-center">
         <ul class="list-unstyled">
           <li><h5>Institucional:</h5></li>
-          <li><small><a routerLink='/sobre'>Sobre</a></small></li>
-          <li><small><a routerLink="/contato">Contato</a></small></li>
-          <li><small><a routerLink="/contato">Parceiros</a></small></li>
-          <li><small><a routerLink='/sobre'>Equipe</a></small></li>
+          <li>
+            <small><a routerLink="/sobre">Sobre</a></small>
+          </li>
+          <li>
+            <small><a routerLink="/contato">Contato</a></small>
+          </li>
+          <li>
+            <small><a routerLink="/contato">Parceiros</a></small>
+          </li>
+          <li>
+            <small><a routerLink="/sobre">Equipe</a></small>
+          </li>
           <li><small>Ajuda</small></li>
         </ul>
       </div>
@@ -31,20 +39,41 @@
           <li><h5>Atendimento:</h5></li>
           <li><small>Segunda a sexta:</small></li>
           <li><small>das 08:00 as 17:00</small></li>
-          <hr class="m-0">
+          <hr class="m-0" />
           <li><small>Sábados, domingos e feriados:</small></li>
           <li><small>das 10:00 as 16:00</small></li>
-          <hr class="m-0">
+          <hr class="m-0" />
           <li><small>Telefone de contato:</small></li>
           <li><small>0800-123-456789</small></li>
         </ul>
       </div>
       <!-- ! coluna horarios -->
 
+      <!-- ? formulario de envio de email -->
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="col-8">
+          <form action="https://formsubmit.co/thiago.faccipieri@gmail.com" method="POST" class='d-flex flex-column'>
+            <h5>Entre em contato:</h5>
+  
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" placeholder="E-mail" name="name" />
+            </div>
+            <div class="form-group mb-2">
+              <textarea type="text" class="form-control" rows="2" placeholder="Assunto" name="message"></textarea>
+            </div>
+            <button type="submit" class='btn btn-danger ms-auto w-100'>Enviar</button>
+          </form>
+        </div>
+      </div>
+      <!-- ? formulario de envio de email -->
     </div>
     <div class="row d-flex flex-column align-items-center">
       <div class="col-md-10 d-flex justify-content-center">
-        <small class="">A Generation Games é um projeto institucional para fins estudantis, nenhum dos produtos listados neste site estão realmente a venda ou em estoque.</small>
+        <small class=""
+          >A Generation Games é um projeto institucional para fins estudantis,
+          nenhum dos produtos listados neste site estão realmente a venda ou em
+          estoque.</small
+        >
       </div>
     </div>
   </div>

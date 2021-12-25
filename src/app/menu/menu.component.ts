@@ -50,7 +50,5 @@ export class MenuComponent implements OnInit {
     localStorage.clear();
   }
 
-  click(){
-    ;
-  }
+  
 }

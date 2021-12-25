@@ -25,6 +25,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 registerLocaleData(localept, 'pt');
@@ -56,6 +57,7 @@ registerLocaleData(localept, 'pt');
     BrowserAnimationsModule,
     CarouselModule,
     BsDatepickerModule.forRoot(),
+    NgxSpinnerModule
   ],
 
   providers: [{
