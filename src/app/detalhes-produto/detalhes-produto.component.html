@@ -55,5 +55,51 @@
     <hr />
   </div>
 
-  <!-- Todo -- criar lista de produtos sugeridos  -->
+  <div class="container">
+    <h4 class="text-center">Produtos Sugeridos</h4>
+    <div class="row">
+      <ng-container *ngFor='let item of categoria.produto'>
+      <div class="col-md-3 produto-card" *ngIf='item.id != produto.id' >
+        <div class="card">
+          <a [routerLink]="['/detalhesProduto', item.id]">
+            <img
+              [src]="item.foto"
+              alt="Card image cap"
+              class="imagem-card"
+            />
+          </a>
+          <div class="card-body p-0">
+            <p
+              class="card-text text-center fw-bold text-nowrap elipse m-1 fs-6"
+            >
+              {{ item.nome }}
+            </p>
+            <div class="d-flex">
+              <div class="d-flex flex-column justify-content-between m-2">
+                <small
+                  class="m-1 fw-bold text-decoration-line-through text-red"
+                  >{{ item.preco | currency: "BRL" }}</small
+                >
+                <h5 class="mx-1 mb-0 text-blue">
+                  {{ item.preco - item.preco * 0.15 | currency: "BRL" }}
+                </h5>
+                <small class="mx-1 mt-0 text-small text-blue"
+                  >A vista no PIX</small
+                >
+                <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
+              </div>
+              <div
+                class="w-100 d-flex justify-content-center align-items-center"
+              >
+                <img [src]="categoria.foto" alt="" class="image-logo" />
+              </div>
+            </div>
+            <button class="btn w-100 comprar" (click)='getProdById()'>
+              <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              <span>Comprar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
 </div>

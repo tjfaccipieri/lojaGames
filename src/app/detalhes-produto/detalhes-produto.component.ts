@@ -15,6 +15,8 @@ export class DetalhesProdutoComponent implements OnInit {
   produto: Produto = new Produto();
   idProd: number
   listaCat: Categoria[] 
+  idCat: number
+  categoria: Categoria = new Categoria()
 
   prodDesconto = 0
   prodParcela: string
@@ -38,11 +40,20 @@ export class DetalhesProdutoComponent implements OnInit {
     })
   }
 
+  getCategoriaById(){
+    this.cat.getCategoriaById(this.idCat).subscribe((resp: Categoria) =>{
+      this.categoria = resp
+      console.log(this.categoria)
+    })
+  }
+
   getProdById(){
     this.prod.getProdutoById(this.idProd).subscribe((resp: Produto) =>{
       this.produto = resp
       this.desconto();
       this.parcela();
+      this.idCat = this.produto.categoria.id
+      this.getCategoriaById()
     })
   }
 
