@@ -63,3 +63,8 @@ li div {
 .menu2 a{
   color: var(--black)
 }
+
+.badge {
+  font-size: 10px;
+  background-color: var(--main-red);
+}

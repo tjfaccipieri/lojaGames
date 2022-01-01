@@ -31,7 +31,12 @@
         <small><a href="" (click)='sair()'>Sair</a></small>
       </div>
       <div class="col-2 d-flex align-items-center fs-4 justify-content-evenly">
-        <i class="fa fa-shopping-cart icons" aria-hidden="true" routerLink='/checkout'></i>
+        <i class="fa fa-shopping-cart icons position-relative" aria-hidden="true" routerLink='/checkout'>
+          <span *ngIf='cart.totalItems >= 1' class="position-absolute top-0 start-100 translate-middle badge rounded-pill">
+            {{cart.totalItems}}
+            <span class="visually-hidden">Itens no carrinho</span>
+          </span>
+        </i>
         <i class="fa fa-whatsapp icons" aria-hidden="true"></i>
         <i class="fa fa-instagram icons" aria-hidden="true"></i>
       </div>
