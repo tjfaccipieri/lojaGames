@@ -5,6 +5,7 @@ import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
+import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -24,7 +25,8 @@ export class MenuComponent implements OnInit {
     private prod: ProdutoService,
     private catg: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public cart: CarrinhoService
   ) {}
 
   ngOnInit() {

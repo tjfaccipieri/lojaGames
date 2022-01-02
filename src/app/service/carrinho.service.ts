@@ -7,11 +7,13 @@ import { Produto } from '../model/Produto';
 export class CarrinhoService {
 
   produtos: Produto[] = []
+  totalItems: number
 
   constructor() { }
 
   adicionar(produto: Produto){
     this.produtos.push(produto)
+    this.totalItems = this.produtos.length
   }
 
   listar(){
