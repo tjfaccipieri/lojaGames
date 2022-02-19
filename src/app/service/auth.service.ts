@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from '../model/Usuario';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
@@ -23,35 +24,35 @@ export class AuthService {
 
   getAllUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(
-      'https://lojagamesbackend.herokuapp.com/usuarios/all',
+      `${environment.address}/usuarios/all`,
       this.token
     );
   }
 
   getUsuarioById(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(
-      `https://lojagamesbackend.herokuapp.com/usuarios/${id}`,
+      `${environment.address}/usuarios/${id}`,
       this.token
     );
   }
 
   logar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
     return this.http.post<UsuarioLogin>(
-      'https://lojagamesbackend.herokuapp.com/usuarios/logar',
+      `${environment.address}/usuarios/logar`,
       usuarioLogin
     );
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(
-      'https://lojagamesbackend.herokuapp.com/usuarios/cadastrar',
+      `${environment.address}/usuarios/cadastrar`,
       usuario
     );
   }
 
   putUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>(
-      'https://lojagamesbackend.herokuapp.com/usuarios/atualizar',
+      `${environment.address}/usuarios/atualizar`,
       usuario,
       this.token
     );
@@ -59,7 +60,7 @@ export class AuthService {
 
   deleteUsuario(id: number) {
     return this.http.delete(
-      `https://lojagamesbackend.herokuapp.com/usuarios/delete/${id}`, this.token
+      `${environment.address}/usuarios/delete/${id}`, this.token
     );
   }
 

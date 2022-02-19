@@ -4,5 +4,6 @@ export const environment = {
   id: 0,
   nome:'',
   usuario: '',
-  tipo: ''
+  tipo: '',
+  address: 'https://lojagamesbackend.herokuapp.com'
 };
